@@ -1,0 +1,10 @@
+#include<bits/stdc++.h> ye sbhi k liye use hoti h library cpp m baar baar apn ko alag alag nhi likhna pdta h at the top of the cpp code 
+E.g: 
+#incllude<bits/stdc++.h>
+Int main(){
+Cout<<"Hello  world";
+Return 0;
+}
+
+
+
