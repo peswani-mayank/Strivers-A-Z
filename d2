@@ -98,3 +98,73 @@ int main(){
     cout<<"value of arr[0] in int main: "<<arr[0]<<endl;
     
 }
+
+
+//Given an array arr of n elements. The task is to reverse the given array. The reversal of array should be inplace.
+Example 1
+
+Input: n=5, arr = [1,2,3,4,5]
+
+Output: [5,4,3,2,1]
+
+Explanation: The reverse of the array [1,2,3,4,5] is [5,4,3,2,1]
+
+
+solution:
+class Solution{
+public:
+    void reverse(vector<int>& arr){
+        int left=0;
+        int right=arr.size()-1;
+        while(left<right){
+           // swap(arr[left],arr[right]);
+           int temp=arr[left];
+           arr[left]=arr[right];
+           arr[right]=temp;
+            left++;
+            right--;
+        }
+
+        
+    }
+};
+
+
+//Given a digit d (0 to 9), find the sum of the first 50 positive integers (integers > 0) that end with digit d.
+
+
+
+A number ends with digit d if its last digit is d.
+
+
+Example 1
+
+Input: d = 1
+
+Output: 12300
+
+Explanation:
+
+The first 50 positive integers ending with 1 are: 1, 11, 21, 31, ..., 491
+
+Their sum is 12300.
+
+solution:
+class Solution {
+    public:
+    int whileLoop(int d) {
+        int sum=0;
+        int count=0;
+        int i=1;
+        while(count<50){
+            if(i%10==d){
+                sum+=i;
+                count++;
+            }
+            i++;
+
+        }
+        return sum;
+        // Your code goes here  
+    }
+};
