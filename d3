@@ -1,0 +1,138 @@
+question 1: 
+Given an integer n. You need to recreate the pattern given below for any value of N. Let's say for N = 5, the pattern should look like as below:
+
+*
+**
+***
+****
+*****
+Print the pattern in the function given to you.
+  solution:
+  #include<iostream>
+ using namespace std;
+ void pattern2(int n){
+     for(int i=0;i<n;i++){  //outer loop for rows
+         for(int j=0;j<=i;j++){ //inner loop for column 
+           //is question m pattern dekhe to 1st row m 1 star h 2nd row 2 star  and so on 
+           //isliye inner loop m j ko i link krege jitna i badhta jyega us according j ko bi krte jyrege
+           //when i =0 it run from 0 to 0
+           //when i=1 it runs from 0 to 1
+           //when i=2 it runs from 0 to 2 and so on 
+             cout<<"* ";
+         }
+         cout<<endl;
+     }
+ }
+ int main(){
+     int n;
+     cin>>n;
+     pattern2(n);
+ }
+
+question 2:
+Given an integer n. You need to recreate the pattern given below for any value of N. Let's say for N = 5, the pattern should look like as below:
+1
+12
+123
+1234
+12345
+Print the pattern in the function given to you.
+
+solution:
+  #include<iostream>
+ using namespace std;
+ void pattern2(int n){
+     for(int i=1;i<=n;i++){ //outer loop for row
+         for(int j=1;j<=i;j++){ //inner loop for column
+           //every column is going from 1 to row no.
+           // or print j isliye kr rhe h ye dekh rhe h ki har row m value increment ho rahi h 
+             cout<<j;
+         }
+         cout<<endl;
+     }
+ }
+ int main(){
+     int n;
+     cin>>n;
+     pattern2(n);
+ }
+question 3:
+Given an integer n. You need to recreate the pattern given below for any value of N. Let's say for N = 5, the pattern should look like as below:
+
+
+
+1
+
+22
+
+333
+
+4444
+
+55555
+
+
+
+Print the pattern in the function given to you.
+
+  solution:
+  #include<iostream>
+ using namespace std;
+ void print3(int n){
+     for(int i=1;i<=n;i++){
+  for(int j=1;j<=i;j++){
+             cout<<i<<" ";
+         }
+         cout<<endl;
+     }
+ }
+ int main(){
+     int n;
+     cin>>n;
+     print3(n);
+ }
+
+question4:
+Given an integer n. You need to recreate the pattern given below for any value of N. Let's say for N = 5, the pattern should look like as below:
+
+
+
+*****
+
+****
+
+***
+
+**
+
+*
+
+
+
+Print the pattern in the function given to you.
+
+
+  solution:
+  #include<iostream>
+using namespace std;
+void pattern4(int n){
+    for(int i=0;i<=n;i++){
+        for(int j=0;j<n-i;j++){
+          //Step-by-step
+      //For n = 5
+//i = 0 → n - i = 5 stars → *****
+//i = 1 → 5 - 1 = 4 stars → ****
+//i = 2 → 5 - 2 = 3 stars → ***
+//i = 3 → 5 - 3 = 2 stars → **
+//i = 4 → 5 - 4 = 1 star → *
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
+    
+}
+int main(){
+    int n;
+    cin>>n;
+    pattern4(n);
+}
