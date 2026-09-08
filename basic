@@ -1,0 +1,43 @@
+BEFORE STARTING TO SOLVE THE PROBLEM I SHOULD THINK ABOUT DEW POINTS
+1. First understand the problem
+2. what is input
+3.what do i have to retun
+what is the simplest way to get it
+
+But MORE IMPORTANT: How should you approach LeetCode?
+Since you're starting, follow this process for every problem:
+
+1. Read problem
+       ↓
+2. Understand input & output
+       ↓
+3. Make 2-3 examples yourself
+       ↓
+4. Think of brute-force/simple approach
+       ↓
+5. Write algorithm in English
+       ↓
+6. Convert algorithm to code
+       ↓
+7. Test with edge cases
+       ↓
+8. Analyze Time & Space Complexity
+       ↓
+9. Submit
+       ↓
+10. If wrong → understand why
+
+
+Don't do this ❌
+Open problem
+↓
+Don't understand
+↓
+Watch solution
+↓
+Copy code
+↓
+Submit
+↓
+Next problem
+
