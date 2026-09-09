@@ -373,3 +373,100 @@ FINAL OUTPUT:
     *
 */
 
+//PATTERN 9
+
+//we can say this pattern is the combination of 
+//pattern 7 and pattern 8
+
+// #include<iostream>
+// using namespace std;
+// void pattern7(int n){
+//     for(int i=0;i<n;i++){
+//         //[space1,star, space2]
+//         //here pattern is space, pattern, space so we need to use 
+//         //3 inner loops one for spoace 1,second for star and third for space 2 
+        
+//         //space1
+//         for(int j=0;j<n-i-1;j++){
+//             cout<<" ";
+//         }
+//         //space2
+//         for(int k=0;k<2*i+1;k++){
+//             cout<<"*";
+//         }
+//         //space3
+//         for(int l=0;l<n-i-1;l++){
+//             cout<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+// // int main(){
+// //     int n;
+// //     cin>>n;
+// //     //pattern7(n);
+// // }
+
+// #include<iostream>
+// using namespace std;
+// void pattern8(int n){
+//     for(int  i=0;i<n;i++){
+//         //[space1,star,space2]
+        
+//         //space1
+//         for(int j=0;j<i;j++){
+//             cout<<" ";
+//         }
+//         //star
+//         for(int k=0;k<2*n-2*i-1;k++){
+//             cout<<"*";
+            
+//         }
+        
+//         //space2
+//         for(int l=0;l<i;l++){
+//             cout<<" ";
+//         }
+//         cout<<endl;
+//     }
+    
+// }
+// // int main(){
+// //     int n;
+// //     cin>>n;
+// //     //pattern8(n);
+// // }
+// void pattern9(int n){
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     pattern7(n);
+//     pattern8(n);
+// }
+
+
+//PATTERN10
+#include<iostream>
+using namespace std;
+void pattern10(int n){
+    for(int i=1;i<=2*n-1;i++){
+        int stars=i;
+        
+        if(i>n){
+            stars=2*n-i;
+        }
+        for(int j=1;j<=stars;j++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    
+}
+int main(){
+    int n;
+    cin>>n;
+    
+    pattern10(n);
+}
