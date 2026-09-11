@@ -1,0 +1,149 @@
+//extraction of Digits
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     while(n>0){
+//         int last=n%10; ye last digit ko extract krega 
+//         cout<<last<<endl;
+//         n=n/10; last diigt remove krega
+//     }
+// }
+
+/*
+DRY RUN:
+
+Input:
+n = 12345
+
+while(n > 0)
+
+n = 12345
+last = 12345 % 10 = 5
+cout << 5
+n = 12345 / 10 = 1234
+
+n = 1234
+last = 1234 % 10 = 4
+cout << 4
+n = 1234 / 10 = 123
+
+n = 123
+last = 123 % 10 = 3
+cout << 3
+n = 123 / 10 = 12
+
+n = 12
+last = 12 % 10 = 2
+cout << 2
+n = 12 / 10 = 1
+
+n = 1
+last = 1 % 10 = 1
+cout << 1
+n = 1 / 10 = 0
+
+Now n = 0
+while(n > 0) → false
+
+OUTPUT:
+5
+4
+3
+2
+1
+*/
+
+
+// PROBLEM 1
+
+// Count all Digits of a Number
+// You are given an integer n. You need to return the number of digits in the number.
+// The number will have no leading zeroes, except when the number is 0 itself.
+// Example 1
+// Input: n = 4
+// Output: 1
+// Explanation: There is only 1 digit in 4.
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int count=0;
+//     while(n>0){
+//         int last=n%10;
+//         count++;
+//         cout<<"Extraction of digits: "<<last<<endl;
+//         n=n/10;
+        
+//     }
+//     cout<<"count number of digits: ";
+//     cout<<count;
+// }
+//time complexity: o(log n)
+
+// You are given an integer n. Return the integer formed by placing the digits of n in reverse order.
+// Example 1
+// Input: n = 25
+// Output: 52
+// Explanation: Reverse of 25 is 52.
+
+//code1:  code is for reverse the number
+// 1234
+//  ↓
+// 4321  ← creates/stores this number in rev
+#include<iostream>                 // Input-output ke liye library
+using namespace std;               // std baar-baar likhne ki zarurat nahi
+int main(){
+    int n;                         // Number store karne ke liye variable
+    cin >> n;                      // User se number input lena
+    int rev = 0;                   // Reversed number ko store karne ke liye
+    while(n > 0){                  // Jab tak number 0 nahi hota, loop chalega
+        int last = n % 10;         // Number ki last digit nikalna
+        rev = rev * 10 + last;     // Last digit ko reversed number mein add karna
+        n = n / 10;                // Last digit hata dena
+    }
+    cout << rev;                   // Reversed number print karna
+
+    return 0;                      // Program successfully end
+}
+//example:last = 1234 % 10 = 4
+// rev = 0 * 10 + 4 = 4
+// n = 1234 / 10 = 123
+
+// last = 123 % 10 = 3
+// rev = 4 * 10 + 3 = 43
+// n = 123 / 10 = 12
+
+// last = 12 % 10 = 2
+// rev = 43 * 10 + 2 = 432
+// n = 12 / 10 = 1
+
+// last = 1 % 10 = 1
+// rev = 432 * 10 + 1 = 4321
+// n = 1 / 10 = 0
+
+//code2: ye bs last s digit ko extract krke de rha h isliye lg rha h ki ye bi 
+//reverse ho rha h ye extraction of digits ka code h
+// 1234
+//  ↓
+// 4 → 3 → 2 → 1  ← just prints these digits
+//
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     while(n>0){
+//         int last=n%10;
+//         cout<<last;
+        
+//         n=n/10;
+//     }
+// }
+
+
+
