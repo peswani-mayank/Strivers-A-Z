@@ -1,0 +1,203 @@
+//in this file we are going to learn sorting
+
+//there are three type of sorting
+//1.bubble sorting
+//2.quick sorting
+//3. insertion sorting
+
+//1.selection sorting: in this we select the minimum number in array and place it in the first position 
+//or jo first position pr element hoga us se swap krdenge ese hi sbhi elements k sath krege
+// 1. Select a position
+// 2. Find the smallest element from the unsorted part
+// 3. Swap it with the element at that position
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int arr[]={13,46,24,52,20,9};
+//     int n=6;
+//     for(int i=0;i<n-1;i++){//outer loop decided Where should the next smallest element go?
+//         int min=i; //idr apn n jo bi ith posiiton pr element hga usko minimum assume krliyaa h
+//         for(int j=i+1;j<n;j++){//inner loop This searches the remaining unsorted elements.
+//         if(arr[j]<arr[min]){
+//             min=j;
+//         }
+//         }
+//         int temp=arr[i];
+//         arr[i]=arr[min];
+//         arr[min]=temp;
+        
+//     }
+//     for(int i=0;i<n;i++){
+        
+        
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+//dry run 
+//swap atindex 0 and minimum index [0 to n-1] //here we take n-1 because
+//swap atindex 1 and minimum index [1 to n-1]
+//swap atindex 2 and minimum index [2 to n-1] : here we start from index 2 because element at index 0 and 1 are sorted  so we do not need to include them
+//swap atindex 3 and minimum index [3 to n-1]
+//and  so on 
+
+//inner loop (for inti=0;i<n-1;i++)  i ye decide krega ki hume konsi posiiton ko fix krna h 
+//outer loop (for int j=i+1;j<n;j++) j ka kaam h jo remaining part h unsortedd arrray ka usme search krna 
+//[13, 46, 24, 52, 20, 9]
+// ↑   ↑
+// i   j
+
+// Initial array: 13 46 24 52 20 9
+
+// ====================================
+// i = 0
+// Starting minimum: arr[0] = 13
+// j = 1 -> Compare arr[1] = 46 with arr[0] = 13
+// j = 2 -> Compare arr[2] = 24 with arr[0] = 13
+// j = 3 -> Compare arr[3] = 52 with arr[0] = 13
+// j = 4 -> Compare arr[4] = 20 with arr[0] = 13
+// j = 5 -> Compare arr[5] = 9 with arr[0] = 13 -> Smaller found! min = 5
+// Minimum found: 9 at index 5
+// Before swap: 13 46 24 52 20 9
+// After swap:  9 46 24 52 20 13
+
+// ====================================
+// i = 1
+// Starting minimum: arr[1] = 46
+// j = 2 -> Compare arr[2] = 24 with arr[1] = 46 -> Smaller found! min = 2
+// j = 3 -> Compare arr[3] = 52 with arr[2] = 24
+// j = 4 -> Compare arr[4] = 20 with arr[2] = 24 -> Smaller found! min = 4
+// j = 5 -> Compare arr[5] = 13 with arr[4] = 20 -> Smaller found! min = 5
+// Minimum found: 13 at index 5
+// Before swap: 9 46 24 52 20 13
+// After swap:  9 13 24 52 20 46
+
+// ====================================
+// i = 2
+// Starting minimum: arr[2] = 24
+// j = 3 -> Compare arr[3] = 52 with arr[2] = 24
+// j = 4 -> Compare arr[4] = 20 with arr[2] = 24 -> Smaller found! min = 4
+// j = 5 -> Compare arr[5] = 46 with arr[4] = 20
+// Minimum found: 20 at index 4
+// Before swap: 9 13 24 52 20 46
+// After swap:  9 13 20 52 24 46
+
+// ====================================
+// i = 3
+// Starting minimum: arr[3] = 52
+// j = 4 -> Compare arr[4] = 24 with arr[3] = 52 -> Smaller found! min = 4
+// j = 5 -> Compare arr[5] = 46 with arr[4] = 24
+// Minimum found: 24 at index 4
+// Before swap: 9 13 20 52 24 46
+// After swap:  9 13 20 24 52 46
+
+// ====================================
+// i = 4
+// Starting minimum: arr[4] = 52
+// j = 5 -> Compare arr[5] = 46 with arr[4] = 52 -> Smaller found! min = 5
+// Minimum found: 46 at index 5
+// Before swap: 9 13 20 24 52 46
+// After swap:  9 13 20 24 46 52
+
+// ====================================
+// Final sorted array: 9 13 20 24 46 52
+
+
+//For Selection Sort:
+
+// Time Complexity: O(n²) in Best, Average, and Worst case
+// Space Complexity: O(1)
+
+
+//bubble sort : Bubble Sort is a sorting algorithm where we repeatedly compare two adjacent elements and swap them if they are in the wrong order.
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int main() {
+//     int arr[] = {13, 46, 24, 52, 20, 9};   // Array = 13 46 24 52 20 9
+//     int n=6;                               // Array mein 6 elements hain
+//     for (int i=n-1;i>=1;i--) {      // i = 5 → 4 → 3 → 2 → 1
+//         for (int j=0;j<i;j++) {       // Har pass mein j = 0 se i-1 tak chalega
+//             if (arr[j]>arr[j+1]) {      // Adjacent elements compare kar rahe hain                           // Agar left wala bada hai → swa
+//                 int temp=arr[j + 1];      // Right element ko temp mein store
+//                 arr[j+1]=arr[j];        // Left element ko right mein rakha
+//                 arr[j]=temp;              // Temp wala element left mein rakha
+//             }
+//             // i=5 ke baad → 13 24 46 20 9 52
+//             // i=4 ke baad → 13 24 20 9 46 52
+//             // i=3 ke baad → 13 20 9 24 46 52
+//             // i=2 ke baad → 13 9 20 24 46 52
+//             // i=1 ke baad → 9 13 20 24 46 52
+//         }
+//     }
+//     for (int i = 0;i<n;i++) {            // Array ke har element par jayega
+//         cout<<arr[i]<<" ";               // Har element print karega
+//     }
+// }
+
+//in first step we went from 0 to n-1 [0 to n-1]
+//in second  step we went from 0 to n-2 [0 to n-2]
+// and so on till 0 to 1
+
+//i = 5
+
+// j = 0 → arr[0] = 13, arr[1] = 46
+// 13 > 46 ❌
+// → 13 46 24 52 20 9
+
+// j = 1 → 46 > 24 ✅ swap
+// → 13 24 46 52 20 9
+
+// j = 2 → 46 > 52 ❌
+// → 13 24 46 52 20 9
+
+// j = 3 → 52 > 20 ✅ swap
+// → 13 24 46 20 52 9
+
+// j = 4 → 52 > 9 ✅ swap
+// → 13 24 46 20 9 52
+
+
+// i = 4
+
+// j = 0 → 13 > 24 ❌
+// → 13 24 46 20 9 52
+
+// j = 1 → 24 > 46 ❌
+// → 13 24 46 20 9 52
+
+// j = 2 → 46 > 20 ✅ swap
+// → 13 24 20 46 9 52
+
+// j = 3 → 46 > 9 ✅ swap
+// → 13 24 20 9 46 52
+
+
+// i = 3
+
+// j = 0 → 13 > 24 ❌
+// → 13 24 20 9 46 52
+
+// j = 1 → 24 > 20 ✅ swap
+// → 13 20 24 9 46 52
+
+// j = 2 → 24 > 9 ✅ swap
+// → 13 20 9 24 46 52
+
+
+// i = 2
+
+// j = 0 → 13 > 20 ❌
+// → 13 20 9 24 46 52
+
+// j = 1 → 20 > 9 ✅ swap
+// → 13 9 20 24 46 52
+
+
+// i = 1
+// j = 0 → 13 > 9 ✅ swap
+// → 9 13 20 24 46 52
+
+
+//insertion sorting
+
