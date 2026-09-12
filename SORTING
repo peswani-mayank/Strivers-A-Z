@@ -198,6 +198,11 @@
 // j = 0 → 13 > 9 ✅ swap
 // → 9 13 20 24 46 52
 
+//time Complexity: o(n*n); best,average,worst
+//space Complexity:o(1 best,average,worst)
 
 //insertion sorting
+
+
+
 
