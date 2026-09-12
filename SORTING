@@ -112,7 +112,6 @@
 //bubble sort : Bubble Sort is a sorting algorithm where we repeatedly compare two adjacent elements and swap them if they are in the wrong order.
 // #include <bits/stdc++.h>
 // using namespace std;
-
 // int main() {
 //     int arr[] = {13, 46, 24, 52, 20, 9};   // Array = 13 46 24 52 20 9
 //     int n=6;                               // Array mein 6 elements hain
@@ -198,8 +197,37 @@
 // j = 0 → 13 > 9 ✅ swap
 // → 9 13 20 24 46 52
 
-//time Complexity: o(n*n); best,average,worst
-//space Complexity:o(1 best,average,worst)
+//time Complexity: o(n*n); average,worst
+//space Complexity:o(1)
+
+//method 2 of bubble sort to reduce time complexity o(n*n) to o(n);
+#include<iostream>
+using namespace std;
+int main(){
+    //int arr[] = {13, 46, 24, 52, 20, 9}; 
+    int arr[] = {1,2,3,4,5,6}; 
+   int n=6;  
+   for(int i=n-1;i>=1;i--){
+       int didSwap=0;//apn n idr optimise krne k liye ye variable liya agar swap nhi ho rha h to inner loop m jaye sidha hi bhar aajaye jis se time complexity o(n) ho jyegi or we can say // Assume initially no swap happened
+       for(int j=0;j<=i-1;j++){
+           if(arr[j]>arr[j+1]){
+               int temp=arr[j+1];
+               arr[j+1]=arr[j];
+               arr[j]=temp;
+               didSwap=1; //idr didSwap 1 isliye hoga agar swap ki need hui to 0 s 1 hojyega or bhar aakr print krdega jitni baar bi swap hua hoga
+           }
+       }
+       if(didSwap==0){//This means: if no swapping happened in the entire pass, the array is already sorted, so stop.
+           break;
+       }
+       cout<<"runs"<<endl;
+   }
+   for(int i=0;i<n;i++){
+       cout<<arr[i]<<" ";
+   }
+   
+    
+}
 
 //insertion sorting
 
