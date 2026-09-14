@@ -1,4 +1,4 @@
-//in pattern there will be nested loop
+//in pattern there will be nested loop..
 
 //1.for the outer loop, count numer of lines/rows
 //2.for the inner loop, cont number of colums and connect then somehow with rows
