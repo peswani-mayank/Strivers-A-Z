@@ -70,6 +70,11 @@ void explainVector(){
     vector<int>::reverse_iterator it2 = v3.rend(); //it is reverse end
     vector<int>::reverse_iterator it3 = v3.rbegin(); //it is reverse begin
     
+//     v.begin()   → iterator
+//     v.end()     → iterator
+//     v.rbegin()  → reverse_iterator
+//     v.rend()    → reverse_iterator
+    
     cout<<v3.back()<<" "<<endl;//v.back() means the last element of the vector.
     
     
