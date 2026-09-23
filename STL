@@ -90,7 +90,7 @@ void explainVector(){
         cout<< it<< " ";
     }
     
-    //here we learn deletion of vector:v.begin() is 10  so v.begin()+1 will be 20
+    //here we learn deletion of vector:v.begin() is 10  so v.begin()+1 will be 20...
     v3.erase(v.begin()+1); //{10,30,40}
     
     //if we want to erase elements from one position to another position like in range: we use v3.erase(start,end) here end is not included
