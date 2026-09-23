@@ -41,9 +41,9 @@ void explainVector(){
     vec.push_back({1,2}); // when we are using push_back in pair type with vector we need to write in curly braces
     vec.emplace_back(1,2); //but in emplace_back we no need to write values in curly braces it automatically assumes  that's why emplace_back is faster than push_back
     
-    vector<int> v(5,100); //it is the container v of size 5 which having 5 instances of 100 {100,100,100,100,100} and if we want to increase the size of container we can increase just using push_back the new element will be insert in thee end 
+    vector<int> v4(5,100); //it is the container v of size 5 which having 5 instances of 100 {100,100,100,100,100} and if we want to increase the size of container we can increase just using push_back the new element will be insert in thee end 
     
-    vector<int> v(3); //it is the container of size 3 with the 3 instances of 0 or garbage value its depend on compiler {0,0,0}
+    vector<int> v5(3); //it is the container of size 3 with the 3 instances of 0 or garbage value its depend on compiler {0,0,0}
     
     vector<int> v1(3,6); //it is container of size 3 with the 3 instances of 6 {6,6,6}
     vector<int> v2(v1); //v2 container is the copy of v1 conatiner {6,6,6}
@@ -56,22 +56,53 @@ void explainVector(){
     //here is the other way of accessing element iterator
 //basically iterator points to the memory
 
-    vector<int>::iterator it=v.begin(); //inplace of it can be anything it is just a name
+    vector<int>::iterator it=v3.begin(); //inplace of it can be anything it is just a name
     //and here v.begin will point to memory of element not to the the element
     it++; //moves to next means here we are saying move to next element
-    cout<<*(it)<<" "; // as v.begin point to memory of element and we want element that's why we use * here like pointer
+    cout<<*(it)<<" "<<endl; // as v.begin point to memory of element and we want element that's why we use * here like pointer
     
     it=it+2; //here we are saying move position next 2 means 2 posiiton aage jana h or wo element print krwana h
-    cout<<*(it)<<" ";
+    cout<<*(it)<<" "<<endl;
     
     
     //here are some another iterators 
-    vector<int>::iterator it=v.end();
-    vector<int>::iterator it=v.rend(); //it is reverse end
-    vector<int>::iterator it=v.rbegin();//it is reverse begin
+    vector<int>::iterator it1=v3.end();
+    vector<int>::reverse_iterator it2 = v3.rend(); //it is reverse end
+    vector<int>::reverse_iterator it3 = v3.rbegin(); //it is reverse begin
+    
+    cout<<v3.back()<<" "<<endl;//v.back() means the last element of the vector.
+    
+    
+    //here how we can print entire vector using for loop
+    
+    for(vector<int>::iterator it4=v3.begin();it!=v3.end();it4++){
+        cout<<*(it4)<<" ";
+    }
+    
+    //another method to print entire vector using auto 
+    
+    for(auto it5=v3.begin();it5!=v3.end();it5++){ //it automatically convert it in iterator
+        cout<<*(it5)<<" ";
+    }
+    
+    //other way to print vector using for each loop
+    for(auto it6 :v3){
+        cout<< it<< " ";
+    }
+    
+    //here we learn deletion of vector:v.begin() is 10  so v.begin()+1 will be 20
+    v3.erase(v.begin()+1); //{10,30,40}
+    
+    //if we want to erase elements from one position to another position like in range: we use v3.erase(start,end) here end is not included
+    v3.erase(v3.begin()+1,v3.begin()+3); //{10,40}
+    
+    
+    
+    
+    
     
 }
 int main(){
-    explainVector()
+    explainVector();
     
 }
