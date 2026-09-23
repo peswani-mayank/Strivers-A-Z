@@ -41,7 +41,7 @@ void explainVector(){
     vec.push_back({1,2}); // when we are using push_back in pair type with vector we need to write in curly braces
     vec.emplace_back(1,2); //but in emplace_back we no need to write values in curly braces it automatically assumes  that's why emplace_back is faster than push_back
     
-    vector<int> v4(5,100); //it is the container v of size 5 which having 5 instances of 100 {100,100,100,100,100} and if we want to increase the size of container we can increase just using push_back the new element will be insert in thee end 
+    vector<int> v4(5,100); //it is the container v4 of size 5 which having 5 instances of 100 {100,100,100,100,100} and if we want to increase the size of container we can increase just using push_back the new element will be insert in thee end 
     
     vector<int> v5(3); //it is the container of size 3 with the 3 instances of 0 or garbage value its depend on compiler {0,0,0}
     
@@ -59,10 +59,10 @@ void explainVector(){
     vector<int>::iterator it=v3.begin(); //inplace of it can be anything it is just a name
     //and here v.begin will point to memory of element not to the the element
     it++; //moves to next means here we are saying move to next element
-    cout<<*(it)<<" "<<endl; // as v.begin point to memory of element and we want element that's why we use * here like pointer
+    cout<< *(it)<<" "<<endl; // as v.begin point to memory of element and we want element that's why we use * here like pointer
     
     it=it+2; //here we are saying move position next 2 means 2 posiiton aage jana h or wo element print krwana h
-    cout<<*(it)<<" "<<endl;
+    cout<< *(it)<<" "<<endl;
     
     
     //here are some another iterators 
@@ -96,10 +96,29 @@ void explainVector(){
     //if we want to erase elements from one position to another position like in range: we use v3.erase(start,end) here end is not included
     v3.erase(v3.begin()+1,v3.begin()+3); //{10,40}
     
+    //insert Functions
+    vector<int> v5(2,100);//{100,100}
+    v5.insert(v5.begin(),300); //it will insert in the beginning
+    //{300,100,100}
+     
+    v5.insert(v5.begin()+1,2,10);//{300,10,10,100,100}
+    //here v5.begin()+1 is second position
+    //2 is  number of instances we want to add 
+    //10 is element which we want to add 
+    
+    vector<int> copy(2,50);//{50,50}
+    v5.insert(v5.begin(),copy.begin(),copy.end());//{50,50,300,10,10,100,100}
     
     
+    cout<<v3.size();//gives the size of vector
     
+    //v3.swap(v5);
+    //swap the vectors
     
+    //v5.clear();
+    //erases the entire vector
+    
+    //cout<<v.empty();
     
 }
 int main(){
