@@ -77,7 +77,7 @@
 //     cout<< *(it)<<" "<<endl; // as v.begin point to memory of element and we want element that's 
 //why we use * here like pointer
     
-//     it=it+2; //here we are saying move position next 2 means 2 posiiton aage jana h or wo element 
+//     it=it+2; //here we are saying move position next 2 means 2 positon aage jana h or wo element 
 //print krwana h
 //     cout<< *(it)<<" "<<endl;
     
