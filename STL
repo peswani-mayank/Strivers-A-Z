@@ -23,6 +23,13 @@
     
 //     pair<int,int> arr[]={{1,2},{2,3},{5,1}};
 //     cout<<arr[1].second;
+
+//WE CAN ALSO ACCESS LIKE THIS 
+
+// for(int i=0;i<3;i++) {
+//     cout<<arr[i].first<<" "<<arr[i].second<<endl;
+// }
+
 // }
 // int main(){
 //     explainPair();
@@ -43,11 +50,12 @@
     
 //     vector<pair<int,int>> vec;//we can define vector of pair type
 //     vec.push_back({1,2}); // when we are using push_back in pair type with vector we need to write in curly braces
-//     vec.emplace_back(1,2); //but in emplace_back we no need to write values in curly braces it automatically assumes  that's why emplace_back is faster than push_back
+//     vec.emplace_back(1,2); //but in emplace_back we no need to write values in curly braces it automatically assumes  
+//that's why emplace_back is faster than push_back
     
 //     vector<int> v4(5,100); //it is the container v4 of size 5 which having 5 instances of 100 {100,100,100,100,100} 
 //and if we want to increase the size of container we can increase just using push_back the new element will be insert 
-//in thee end 
+//in the end 
     
 //     vector<int> v5(3); //it is the container of size 3 with the 3 instances of 0 or garbage value 
 //its depend on compiler {0,0,0}
