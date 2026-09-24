@@ -326,3 +326,96 @@
 // //top in o(1);
 
 
+//Set: A set is an STL container that stores unique elements in sorted order
+#include<bits/stdc++.h>
+using namespace std;
+void explainSet(){
+    set<int> st;
+    st.insert(1);//{1}
+    st.insert(2);//{1,2}
+    st.insert(2);//{1,2}
+    st.insert(4);//{1,2,4}
+    st.insert(3);//{1,2,3,4}
+    
+    //functionality of insert in vector can also be used that only increases efficiency
+    
+    //begin(), end(), rbegin(), rend(), size()
+    
+    //empty() and swap() are same as those of vector
+    
+    //{1,2,3,4,5}
+    auto it1=st.find(3); //it will return iterator
+    
+    //{1,2,3,4,5}
+    auto it2=st.find(6); //if element is not in the set then it will return st.end()
+    
+    //{1,2,5}
+    st.erase(5);//erase 5 amd it will be {1,2}//takes logaritmic time
+    
+    int cnt=st.count(1); //ye ya to 1 dega ya fr 0 dega because set stores unique elements to fr element hoga to 1 hi baar hoga ya fr nhi hoga
+    
+    auto it3=st.find(3);
+    st.erase(it);//it takes constant time
+    
+    //{1,2,3,4,5}
+    
+    auto it4=st.find(2);
+    auto it5=st.find(4);
+    st.erase(it4,it5); //st.erase(start,end) end is not included and it will give{1,4,5} idr apn ek range m erase kr rhe h 2 s lekr 4 tk but 4th position wala include nbhi hoga
+    
+    //s[0];   // ❌
+    //other functions same as vector
+    //lower_bound() and upper_bound() function works in the same way
+    
+    //as in vector it does
+    
+    
+
+
+}
+int main(){
+    explainSet();
+    
+}
+
+
+//upper_bound and lower_bound
+//For a sorted vector:
+// lower_bound(x) → first element ≥ x
+// upper_bound(x) → first element > x
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int main() {
+
+//     vector<int> v = {1, 2, 2, 2, 4, 5, 7};
+
+//     int x = 2;
+
+//     // Lower Bound
+//     auto lb = lower_bound(v.begin(), v.end(), x);
+
+//     // Upper Bound
+//     auto ub = upper_bound(v.begin(), v.end(), x);
+//v.begin(), v.end() ye isliye use kiye h ye btate h ki kha s kha tk search krna h
+
+
+//     cout << "Lower Bound: " << *lb << endl;
+//     cout << "Upper Bound: " << *ub << endl;
+
+//     // Find their indexes
+//     cout << "Lower Bound Index: " << lb - v.begin() << endl;
+//     cout << "Upper Bound Index: " << ub - v.begin() << endl;
+
+//     return 0;
+// }
+    
+  //Count occurrences
+  
+//   int frequency = ub - lb;
+// cout << "Frequency: " << frequency << endl; //prints: Frequency: 3
+
+
+//v.end(): last element ko point nahi karta. Ye last element ke just baad ko point karta hai.
+
