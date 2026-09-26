@@ -411,7 +411,7 @@ int main(){
 //     return 0;
 // }
     
-  //Count occurrences
+  //Count occurrences....
   
 //   int frequency = ub - lb;
 // cout << "Frequency: " << frequency << endl; //prints: Frequency: 3
