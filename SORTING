@@ -32,13 +32,13 @@
 // }
 
 //dry run 
-//swap atindex 0 and minimum index [0 to n-1] //here we take n-1 because
+//swap atindex 0 and minimum index [0 to n-1] //here we take n-1 because jo last m elemeent hoga wo aapne shi place pr phuch jyega swap krte krte apn ko usko check krne ki need nhi hogi
 //swap atindex 1 and minimum index [1 to n-1]
 //swap atindex 2 and minimum index [2 to n-1] : here we start from index 2 because element at index 0 and 1 are sorted  so we do not need to include them
 //swap atindex 3 and minimum index [3 to n-1]
 //and  so on 
 
-//inner loop (for inti=0;i<n-1;i++)  i ye decide krega ki hume konsi posiiton ko fix krna h 
+//inner loop (for int i=0;i<n-1;i++)  i ye decide krega ki hume konsi position ko fix krna h 
 //outer loop (for int j=i+1;j<n;j++) j ka kaam h jo remaining part h unsortedd arrray ka usme search krna 
 //[13, 46, 24, 52, 20, 9]
 // ↑   ↑
