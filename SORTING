@@ -205,7 +205,7 @@ int main(){
     int arr[] = {1,2,3,4,5,6}; 
    int n=6;  
    for(int i=n-1;i>=1;i--){
-       int didSwap=0;//apn n idr optimise krne k liye ye variable liya agar swap nhi ho rha h to inner loop m jaye sidha hi bhar aajaye jis se time complexity o(n) ho jyegi or we can say // Assume initially no swap happened
+       int didSwap=0;//apn n idr optimise krne k liye ye variable liya agar swap nhi ho rha h to inner loop m nhi  jaye sidha hi bhar aajaye jis se time complexity o(n) ho jyegi or we can say // Assume initially no swap happened
        for(int j=0;j<=i-1;j++){
            if(arr[j]>arr[j+1]){
                int temp=arr[j+1];
@@ -222,8 +222,6 @@ int main(){
    for(int i=0;i<n;i++){
        cout<<arr[i]<<" ";
    }
-   
-    
 }
 
 //insertion sorting
