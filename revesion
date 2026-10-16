@@ -189,3 +189,22 @@
 
 //checking prime number: agar given number k sirf 2 hi factor hue 1 or wo number to given number prime hoga
 //or agar 2 se jyada factor hue to wo prime number nhi hoga
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int count=0;
+//     for(int i=1;i<=n;i++){
+//         if(n%i==0){
+//             count++;
+//             cout<<i<<" ";
+//         }
+//     }
+//     if(count==2){
+//         cout<<"\nPrime Number";
+//     }else{
+//         cout<<"\nNot Prime Number";
+//     }
+// }
