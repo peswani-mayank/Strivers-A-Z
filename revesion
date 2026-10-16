@@ -305,3 +305,32 @@
 //     cout<<gcd;
 // }
 //time complexity by Euclidean Algorithm: (O(\log(\min(a,b))))
+
+
+//Count number of odd digits in a number
+// class Solution {
+// public:
+//     int countOddDigit(int n) {
+//         int count=0;
+//         while(n>0){
+//             int last=n%10;
+//             if(last%2!=0){
+//                 count++;
+//             }
+//             n=n/10;
+//         }
+//         return count;
+
+//     }
+// };
+
+
+//LCM of two numbers
+
+// class Solution {
+// public:
+//     int LCM(int n1, int n2) {
+//         int g = gcd(n1, n2);
+//         return (n1 / g) * n2;
+//     }
+// };
