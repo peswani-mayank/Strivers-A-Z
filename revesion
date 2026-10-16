@@ -190,6 +190,7 @@
 //checking prime number: agar given number k sirf 2 hi factor hue 1 or wo number to given number prime hoga
 //or agar 2 se jyada factor hue to wo prime number nhi hoga
 
+//here time complexity is o(n);
 // #include<bits/stdc++.h>
 // using namespace std;
 // int main(){
@@ -206,5 +207,26 @@
 //         cout<<"\nPrime Number";
 //     }else{
 //         cout<<"\nNot Prime Number";
+//     }
+// }
+
+//method 2 of finding prime factors iski time complexity o(root(n)) hogi ye optimized way rhega
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     vector<int>ls;
+//     for(int i=1;i*i<=n;i++){
+//         if(n%i==0){
+//             ls.push_back(i);
+//             if((n/i)!=i){
+//                 ls.push_back(n/i);
+//             }
+//         }
+//     }
+//     sort(ls.begin(),ls.end());
+//     for(auto it:ls){
+//         cout<<it<<" ";
 //     }
 // }
