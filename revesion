@@ -230,3 +230,38 @@
 //         cout<<it<<" ";
 //     }
 // }
+
+//method 2 of checking prime in time complexity of o(root(n))
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    int count = 0;
+
+    if (n <= 1) {
+        cout << "Not Prime";
+        return 0;
+    }
+
+    for (int i = 1; i * i <= n; i++) {
+        if (n % i == 0) {
+            count++;
+
+            if (n / i != i) {
+                count++;
+            }
+        }
+    }
+
+    if (count == 2) {
+        cout << "Prime";
+    } else {
+        cout << "Not Prime";
+    }
+    return 0;
+}
+
