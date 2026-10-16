@@ -1,0 +1,164 @@
+// //in this file we will cover sorting algorithms 
+// //1. selection sort:Selection Sort repeatedly finds the minimum element from 
+// //the unsorted part of an array and swaps it with the first element of that unsorted part.
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     for(int i=0;i<n-1;i++){
+//         int min=i;
+//         for(int j=i+1;j<=n;j++){
+//             if(arr[j]<arr[min]){
+//                 min=j;
+//             }
+//         }
+//         int temp=arr[min];
+//         arr[min]=arr[i];
+//         arr[i]=temp;
+//     }
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+
+//bubble Sort
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     for(int i=0;i<n;i++){
+//         int did=0;
+//         for(int j=0;j<n-i-1;j++){
+//             if(arr[j]>arr[j+1]){
+//                 int temp=arr[j+1];
+//                 arr[j+1]=arr[j];
+//                 arr[j]=temp;
+//                 did=1;
+//             }
+//         }
+//         if(did==0){
+//             break;
+//         }
+//         cout<<"run\n";
+//     }
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+
+//basic
+//Time complexity:o(log10(n)) //here 10 because everythime it is divisble by 10 ya fr apn esa bol skte h jis bi number s divide
+//ho rha hoga log k base m wo aajyega same count of ddigits k liye bi yehi hoga
+//extraction of digits
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     while(n>0){
+//         int last=n%10;
+//         cout<<last<<" ";
+//         n=n/10;
+//     }
+// }
+
+//counting of digits
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int count=0;
+//     while(n>0){
+//         //int last=n%10;
+//         //cout<<last<<" ";
+//         count++;
+//         n=n/10;
+//     }
+    
+//     cout<<"\n"<<count;
+// }
+
+//method 2 of counting digits
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int count=(int)log10(n)+1;
+//     cout<<count;
+// }
+
+//reverse of number
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int rev=0;
+//     while(n>0){
+//         int last=n%10;
+//         rev=rev*10+last;
+//         n=n/10;
+//     }
+//     cout<<rev;
+// }
+
+
+//palindrome number;
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int rev=0;
+//     int temp=n;
+//     while(n>0){
+//         int last=n%10;
+//         rev=rev*10+last;
+//         n=n/10;
+//     }
+//     if(rev==temp){
+//         cout<<"Palindrome";
+//     }else{
+//         cout<<"Not Palindrome";
+//     }
+// }
+
+//Armstrong number
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int temp=n;
+    int sum=0;
+    int count=0;
+    int temp2=n;
+    while(temp2>0){
+        count++;
+        temp2=temp2/10;
+    }
+    while(n>0){
+        int last=n%10;
+        sum+=pow(last,count);
+        n=n/10;
+    }
+    if(sum==temp){
+        cout<<"Arm";
+    }else{
+        cout<<"Not Arm";
+    }
+}
