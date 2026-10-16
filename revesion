@@ -138,27 +138,54 @@
 // }
 
 //Armstrong number
-#include<bits/stdc++.h>
-using namespace std;
-int main(){
-    int n;
-    cin>>n;
-    int temp=n;
-    int sum=0;
-    int count=0;
-    int temp2=n;
-    while(temp2>0){
-        count++;
-        temp2=temp2/10;
-    }
-    while(n>0){
-        int last=n%10;
-        sum+=pow(last,count);
-        n=n/10;
-    }
-    if(sum==temp){
-        cout<<"Arm";
-    }else{
-        cout<<"Not Arm";
-    }
-}
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int temp=n;
+//     int sum=0;
+//     int count=0;
+//     int temp2=n;
+//     while(temp2>0){
+//         count++;
+//         temp2=temp2/10;
+//     }
+//     while(n>0){
+//         int last=n%10;
+//         sum+=pow(last,count);
+//         n=n/10;
+//     }
+//     if(sum==temp){
+//         cout<<"Arm";
+//     }else{
+//         cout<<"Not Arm";
+//     }
+// }
+
+
+//print all divisors
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+   
+//     for(int i=1;i<=n;i++){// ye isliye agar jo bi number hoga uske factors 1 s lekr us number k bich m hi honge jese agar 
+//     //36 liya h to iske factors 1 se lekar 36 k bich hi honge 
+//         if(n%i==0){
+// //             Important concept samjho
+// // - n % i == 0 ka matlab hai ki n, i se completely divide ho raha hai.
+// // - Agar remainder 0 hai, toh i ek factor hai.
+// // - Agar remainder 0 nahi hai, toh i factor nahi hai.
+// // Placement tip: Tumhara code correct hai. Iski time complexity \(O(n)\) hai, kyunki loop n baar chalta hai.
+          
+//             cout<<i<<" ";
+//         }
+//     }
+    
+// }
+
+
+//checking prime number: agar given number k sirf 2 hi factor hue 1 or wo number to given number prime hoga
+//or agar 2 se jyada factor hue to wo prime number nhi hoga
