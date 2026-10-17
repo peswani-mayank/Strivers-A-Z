@@ -292,6 +292,7 @@
 //     cin>>a>>b;
 //     int gcd=1;
 //     while(a>0 && b>0){
+
 //         if(a>b){
 //             a=a%b;
 //         }else{
