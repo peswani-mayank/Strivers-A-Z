@@ -157,6 +157,7 @@
 //         sum+=pow(last,count);
 //         n=n/10;
 //     }
+
 //     if(sum==temp){
 //         cout<<"Arm";
 //     }else{
