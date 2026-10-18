@@ -176,6 +176,7 @@
 //     for(int i=1;i<=n;i++){// ye isliye agar jo bi number hoga uske factors 1 s lekr us number k bich m hi honge jese agar 
 //     //36 liya h to iske factors 1 se lekar 36 k bich hi honge 
 //         if(n%i==0){
+
 // //             Important concept samjho
 // // - n % i == 0 ka matlab hai ki n, i se completely divide ho raha hai.
 // // - Agar remainder 0 hai, toh i ek factor hai.
