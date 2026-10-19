@@ -17,7 +17,6 @@
 //                 min=j;
 //             }
 //         }
-
 //         int temp=arr[min];
 //         arr[min]=arr[i];
 //         arr[i]=temp;
@@ -157,7 +156,6 @@
 //         sum+=pow(last,count);
 //         n=n/10;
 //     }
-
 //     if(sum==temp){
 //         cout<<"Arm";
 //     }else{
@@ -176,11 +174,9 @@
 //     for(int i=1;i<=n;i++){// ye isliye agar jo bi number hoga uske factors 1 s lekr us number k bich m hi honge jese agar 
 //     //36 liya h to iske factors 1 se lekar 36 k bich hi honge 
 //         if(n%i==0){
-
 // //             Important concept samjho
 // // - n % i == 0 ka matlab hai ki n, i se completely divide ho raha hai.
 // // - Agar remainder 0 hai, toh i ek factor hai.
-
 // // - Agar remainder 0 nahi hai, toh i factor nahi hai.
 // // Placement tip: Tumhara code correct hai. Iski time complexity \(O(n)\) hai, kyunki loop n baar chalta hai.
           
@@ -238,7 +234,6 @@
 //method 2 of checking prime in time complexity of o(root(n))
 
 // #include <bits/stdc++.h>
-
 // using namespace std;
 // int main() {
 //     int n;
@@ -295,7 +290,6 @@
 //     cin>>a>>b;
 //     int gcd=1;
 //     while(a>0 && b>0){
-
 //         if(a>b){
 //             a=a%b;
 //         }else{
@@ -343,18 +337,89 @@
 // };
 
 //Return the Largest Digit in a Number
-class Solution {
-public:
-    int largestDigit(int n) {
-        int max=0;
-        while(n>0){
-            int last=n%10;
-            if(last>max){
-                max=last;
-            }
-            n=n/10;
-        }
-        return max;
+// class Solution {
+// public:
+//     int largestDigit(int n) {
+//         int max=0;
+//         while(n>0){
+//             int last=n%10;
+//             if(last>max){
+//                 max=last;
+//             }
+//             n=n/10;
+//         }
+//         return max;
 
-    }
-};
+//     }
+// };
+
+//Sum of Array Elements
+// class Solution{
+// public:
+// 	int sum(int arr[], int n) {
+//         int sum=0;
+//         for(int i=0;i<n;i++){
+//             sum+=arr[i];
+//         }
+//         return sum;
+	  
+// 	}
+// };
+
+//Count of odd numbers in Array
+//isme apn n phele array ki size n input li h fr array input liya h or fr 
+//for loop chalaya h jo ki pure array m chalege or agar fror ek count variable 
+//declare kiya or  if condition s check krega ki pure loop m agar koi bi element 
+//odd hoga to count increase hota rhega or fr loop pura hpjyega to fr count print hojyrga 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int count=0;
+//     for(int i=0;i<n;i++){
+//         if(arr[i]%2!=0){
+//             count++;
+//         }
+//     }
+//     cout<<"No. of Elements: "<<count;
+// }
+
+
+//Given an array arr[] of positive integers. The task is to return the count of the number of odd and even elements in the array.
+
+//Note: Return two elements where the first one in the count of odd & second one is the count of even.
+// class Solution {
+//   public:
+//     pair<int, int> countOddEven(vector<int> &arr) {
+//         // code here
+//         //idr apn n pphele n liya jo ki array ki size h or fr 2 variable liye jo 
+//         //ki a or b inko apn n count k liye liye h taaki  agar array m even element mile
+//         //to a increase ho or agar odd element mile to b increase ho fr for loop chalaya h
+//         //jo ki pure array m check krega if condition ki agar even element mile to a increase
+//         //hoga or agar odd element mile to b increase hoga or fr apn n b or a ko return krdiya h
+//         //kyuki question m diya h ki phele odd element ka count return krna h fr even element ka 
+//         //count return krna h 
+//         int n=arr.size();
+//         int a=0; //even element count
+//         int b=0;//odd element count
+//         for(int i=0;i<n;i++){
+            
+            
+//             if(arr[i]%2==0){ //checking even condition
+//                 a++;
+//             }
+            
+//             else{
+//                 b++;
+//             }
+//         }
+//         return {b,a};
+        
+//     }
+// };
+
