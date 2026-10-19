@@ -180,6 +180,7 @@
 // //             Important concept samjho
 // // - n % i == 0 ka matlab hai ki n, i se completely divide ho raha hai.
 // // - Agar remainder 0 hai, toh i ek factor hai.
+
 // // - Agar remainder 0 nahi hai, toh i factor nahi hai.
 // // Placement tip: Tumhara code correct hai. Iski time complexity \(O(n)\) hai, kyunki loop n baar chalta hai.
           
