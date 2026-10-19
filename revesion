@@ -238,6 +238,7 @@
 //method 2 of checking prime in time complexity of o(root(n))
 
 // #include <bits/stdc++.h>
+
 // using namespace std;
 // int main() {
 //     int n;
