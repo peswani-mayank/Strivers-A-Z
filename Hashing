@@ -116,4 +116,104 @@
 
 //map: there are two parameters in map one is key the number is the key in array and and another is value and it is the frequency of that element
 
+//here how can we count frequency of numbers by using map
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     map<int,int> mpp;
+//     for(int i=0;i<n;i++){
+//         mpp[arr[i]]++;
+//     }
+//     //iterate in the map
+//     for(auto it:mpp){
+//         cout<<it.first<<"->"<<it.second<<endl;//map always stores  in sorted order
+//     }
+//     int q;
+//     cin>>q;
+//     while(q>0){
+//         int num1;
+//         cin>>num1;
+//         cout<<mpp[num1]<<" ";
+//     }
+// }
 
+//time complexity of map: storing and fetching takes o(logn) in all cases(best,average,wordt)
+
+
+//here using unordered_map it does not store in sorted order as map
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     unordered_map<int,int> mpp;
+//     for(int i=0;i<n;i++){
+//         mpp[arr[i]]++;
+//     }
+//     //iterate in the unordered_map
+//     for(auto it:mpp){
+//         cout<<it.first<<"->"<<it.second<<endl;
+        
+//     }
+//     int q;
+//     cin>>q;
+//     while(q>0){
+//         int num1;
+//         cin>>num1;
+//         cout<<mpp[num1]<<" ";
+//     }
+// }
+
+//time complexity of unordered_map of storing and fetching is o(1) in average and best case in most of the time and here n is the number of elements in the map
+//in worst case o(n) it's reason having 3 METHOD
+//1.division METHOD: in this we do arr[i]%10
+//2.folding METHOD
+//3.mid square METHOD
+
+// Given an array nums of n integers, find the most frequent element in it i.e., 
+// the element that occurs the maximum number of times. If there are multiple elements 
+// that appear a maximum number of times, find the smallest of them.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int maxfreq=0;
+    int ans=0;
+    
+    for(int i=0;i<n;i++){
+        int count=0;
+        for(int j=0;j<n;j++){
+            if(arr[i]==arr[j]){
+                count++;
+            }
+        }
+        if(count>maxfreq){
+        maxfreq=count;
+        ans=arr[i];
+            
+        }
+        else if(count==maxfreq&&arr[i]<ans){
+            ans=arr[i];
+            
+        }
+        
+    }
+    cout << ans << endl;
+    
+}
