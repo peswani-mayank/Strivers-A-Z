@@ -1,0 +1,119 @@
+//IN THIS FILE WE WILL COVER HASHING 
+//HASHING: Hashing is a technique used to store, retrieve, and search data efficiently 
+//by mapping a key to an index or location in a data structure using a hash function.
+//Example: Frequency of Elements 
+//BRUTE FORCE METHOD OF FRQUENCY OF Elements
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int arr[5]={1,2,1,3,2};
+//     int count=0;
+//     int number=1;//idr apn n ek number le liya jiski apn ko frequenscy check krni h 
+//     for(int i=0;i<5;i++){
+//         if(arr[i]==number){
+//             count++;
+//         }
+//     }
+//     cout<<count;
+// }
+
+//ese hi apn function bnakr kr skte h us function m 
+//int function_name(number,arr[n]) or uper wala logic likh denge 
+//usme jo bi apn ko number chahiye wo daaldenge or jis bi array m searcch krna h wo array daal denge
+//
+//time complexity: isme kya ho rha h har element k liye loop o(n) chalega 
+//kyuki pure array m traverse krega suppose is example array m 5 element h to iski time complexity 5*o(n) hogi 
+//and imagine isme bhut saare numbers ho to iski time compelxity Q*o(n) idr Q no.of elements h or suppose Q bhut bada hua to
+//and imagine Q=10 raise to power 5 and array m no of elements bi 10 raise to power 5 h to total 10 raise to power 10 time compelxity hogyi
+
+
+//isliye apn hashing use krte h it is technique we can do in much fast way
+
+//hashing-->>prestoring/fetching
+//isme apn ek hash array bnayege isme apn pre calculate krege Hash array mein frequency store karo
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int hash[13]={0};//idr apn hash m 13 ki isliye likha idr apn ko array m jo 
+//     //bi macimum element hoga usse ek 1 jyada wala likhna h suppoe isme array m 12 macimum element h to 13 leliya
+//     //Reason: Array ka indexing 0 se start hota hai. Isliye maximum index 12 ko 
+//     //access karne ke liye total 13 positions chahiye.
+//     for(int i=0;i<n;i++){
+// //Iska meaning hai: array ka har element dekho aur us element ke corresponding 
+// //hash index ki value 1 se increase kar do.
+//         hash[arr[i]]++;
+//     }
+//     int q;//kitni queries aayengi.
+//     cin>>q;//queries input
+//     while(q>0){//Jab tak q zero se bada hai, loop chalega.
+//         int number; //Query wala number store karne ke liye variable banaya.
+//         cin>>number;//User se number input liya.
+//         cout<<hash[number]<<" ";//Us number ki frequency print ki.
+//         q--;//Queries ki remaining count ek se kam kar di.
+//     }
+// }
+
+// //knowledge: if we are declaring array inside int main to ye agar integer array h to maximum 10 raise to power 6 tk hi jyega 
+// //or agar same array int main s bhar h globally declare kr rkha h to wo maximum 10 raise to power 7 tk jyega 
+
+// //or agar array boolean h to int main 10 raise to power 7 tk jyega or globally h to 10 raise to 8 tk jyega
+// //or agar jyada kiya to segmentation fault dega
+
+//REVSION:
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int hash[6]={0};
+//     for(int i=0;i<n;i++){
+//         hash[arr[i]]++;
+//     }
+//     int q;
+//     cin>>q;
+//     while(q>0){
+//         int num1;
+//         cin>>num1;
+//         cout<<hash[num1]<<" ";
+//     }
+    
+// }
+
+//character frequency in string 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     string s;
+//     cin>>s;
+//     int hash[256]={0}; //at max there are only 256 character 
+//     for(int i=0;i<s.size();i++){
+//         hash[s[i]]++;
+//     }
+//     int q;
+//     cin>>q;
+//     while(q>0){
+//         char c;
+//         cin>>c;
+//         cout<<hash[c]<<" ";
+//     }
+// }
+
+//as we see there is one problem in array that it can store only 10 raise to power 7 elements if it is declare in int amin
+//suppose if there are more that it we cannot be able hash by using array
+
+//so in c++ one concept comes that is stl(map, unordered_maop) and in java there is collections(HashMap)
+
+//map: there are two parameters in map one is key the number is the key in array and and another is value and it is the frequency of that element
+
+
