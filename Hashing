@@ -4,7 +4,6 @@
 //Example: Frequency of Elements 
 //BRUTE FORCE METHOD OF FRQUENCY OF Elements
 
-
 // #include<bits/stdc++.h>
 // using namespace std;
 // int main(){
@@ -91,6 +90,61 @@
     
 // }
 
+
+//DRY RUN:
+//int arr[n]={1,2,1,3,2}
+//q=3 //idr apn n 3 query leli mens apn ko in teen number ki frequency check krni h array m niche 1,2,3 number 
+//jinki apn ko freqency check krni h 
+
+//1
+//2
+//3
+//yaha n=5 h to apn ko int hash[6]={0}lena h kyuki n se ek jyada hi hassh ki size lete h 
+// starting m saare elements ki frequency 0 hai.
+//array         1   2   1   3   2  
+// Index	    0	1	2	3	4	5
+// hash[index]	0	0	0	0	0	0
+
+// Iteration 1
+// i = 0
+// arr[0] = 1
+// to idr hash[arr[i]]=hash[arr[0]]=hash[1] hojyega 
+// hash[1]++ → index 1 ki value 0 se 1 ho jayegi.
+
+// Iteration 2
+// i = 1
+// arr[1] = 2
+// to idr hash[arr[i]]=hash[arr[1]]=hash[2] hojyega
+// hash[2]++ → index 2 ki value 0 se 1 ho jayegi.
+
+// Iteration 3
+// i = 2
+// arr[2] = 1
+// to idr hash[arr[i]]=hash[arr[2]]=hash[1] hojyega
+// hash[1]++ → index 1 ki value 1 se 2 ho jayegi.
+
+// Iteration 4
+// i = 3
+// arr[3] = 3
+// to idr hash[arr[i]]=hash[arr[3]]=hash[3] hojyega
+// hash[3]++ → index 3 ki value 0 se 1 ho jayegi.
+
+// Iteration 5
+// i = 4
+// arr[4] = 2
+// to idr hash[arr[i]]=hash[arr[4]]=hash[2] hojyega
+// hash[2]++ → index 2 ki value 1 se 2 ho jayegi.
+
+
+// Final hash array:
+// Index	    0	1	2	3	4	5
+// Frequency	0	2	2	1	0	0
+
+// Query (num1)	hash[num1]	Output
+//         1           	2	2
+//         2	        2	2
+//         3	       1	1
+
 //character frequency in string 
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -113,9 +167,10 @@
 //as we see there is one problem in array that it can store only 10 raise to power 7 elements if it is declare in int amin
 //suppose if there are more that it we cannot be able hash by using array
 
-//so in c++ one concept comes that is stl(map, unordered_maop) and in java there is collections(HashMap)
+//so in c++ one concept comes that is stl(map, unordered_map) and in java there is collections(HashMap)
 
-//map: there are two parameters in map one is key the number is the key in array and and another is value and it is the frequency of that element
+//map: there are two parameters in map one is key the number is the key in array and and another is value 
+//and it is the frequency of that element
 
 //here how can we count frequency of numbers by using map
 // #include<bits/stdc++.h>
@@ -144,7 +199,7 @@
 //     }
 // }
 
-//time complexity of map: storing and fetching takes o(logn) in all cases(best,average,wordt)
+//time complexity of map: storing and fetching takes o(logn) in all cases(best,average,worst)
 
 
 //here using unordered_map it does not store in sorted order as map
