@@ -53,6 +53,7 @@
 //     int q;//kitni queries aayengi.
 //     cin>>q;//queries input
 //     while(q>0){//Jab tak q zero se bada hai, loop chalega.
+
 //         int number; //Query wala number store karne ke liye variable banaya.
 //         cin>>number;//User se number input liya.
 //         cout<<hash[number]<<" ";//Us number ki frequency print ki.
