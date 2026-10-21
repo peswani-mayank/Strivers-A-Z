@@ -29,12 +29,13 @@
 // for(int i=0;i<3;i++) {
 //     cout<<arr[i].first<<" "<<arr[i].second<<endl;
 // }
-
+//we can also take different data types:
+// pair<int,string>p1={1,"Mayank"};
+// cout<<p1.second;
 // }
 // int main(){
 //     explainPair();
 // }
-
 
 //Vector: vector is an STL container that stores multiple elements of the same 
 //data type in a dynamic array.
@@ -92,7 +93,8 @@
 // //     v.rbegin()  → reverse_iterator
 // //     v.rend()    → reverse_iterator
     
-//     cout<<v3.back()<<" "<<endl;//v.back() means the last element of the vector.
+//     cout<<v3.back()<<" "<<endl;
+//v.back() means the last element of the vector.
     
     
 //     //here how we can print entire vector using for loop
@@ -109,7 +111,7 @@
     
 //     //other way to print vector using for each loop
 //     for(auto it6 :v3){
-//         cout<< it<< " ";
+//         cout<< it6<< " ";
 //     }
     
 //     //here we learn deletion of vector:v.begin() is 10  so v.begin()+1 will be 20
@@ -132,8 +134,8 @@
 //     vector<int> copy(2,50);//{50,50}
 //     v5.insert(v5.begin(),copy.begin(),copy.end());//{50,50,300,10,10,100,100}
     
-    
 //     cout<<v3.size();//gives the size of vector
+    
     
 //     //v3.swap(v5);
 //     //swap the vectors
@@ -164,7 +166,18 @@
 //     ls.emplace_back(4);//{2,4}
     
 //     ls.push_front(5);//{5,2,4}
-//     ls.emplace_front(9); //{2,4}
+//     ls.emplace_front(9); 
+
+// ls.pop_back();
+// ls.pop_front();
+
+// List vs Deque in C++ (Hinglish)
+
+// - List: Doubly linked list hoti hai. Front aur back dono se insertion/deletion O(1) mein kar sakte hain. Middle mein insertion/deletion bhi O(1) hoti hai, agar iterator available ho. Lekin l[i] se direct access nahi kar sakte.
+
+// - Deque: Multiple memory blocks mein elements store hote hain. Front aur back dono se insertion/deletion O(1) mein kar sakte hain. d[i] se direct access bhi O(1) mein kar sakte hain.
+
+// Main difference: list mein direct indexing nahi hoti, jabki deque mein hoti hai.
     
     
 //     //rest function same as vector
@@ -250,15 +263,17 @@
 //     st1.swap(st2);;
     
 //     //here every operation is taking same time o(1)
-    
 // }
+
 
 // int main(){
 //     explainStack();
 // }
 
 
+
 //complexity: all operations in constant time o(1);
+
 
 //Queue: Queue is a linear data structure that follows FIFO — First In, First Out.
 
@@ -327,57 +342,58 @@
 
 
 //Set: A set is an STL container that stores unique elements in sorted order
-#include<bits/stdc++.h>
-using namespace std;
-void explainSet(){
-    set<int> st;
-    st.insert(1);//{1}
-    st.insert(2);//{1,2}
-    st.insert(2);//{1,2}
-    st.insert(4);//{1,2,4}
-    st.insert(3);//{1,2,3,4}
+// #include<bits/stdc++.h>
+// using namespace std;
+// void explainSet(){
+//     set<int> st;
+//     st.insert(1);//{1}
+//     st.insert(2);//{1,2}
+//     st.insert(2);//{1,2}
+//     st.insert(4);//{1,2,4}
+//     st.insert(3);//{1,2,3,4}
     
-    //functionality of insert in vector can also be used that only increases efficiency
+//     //functionality of insert in vector can also be used that only increases efficiency
     
-    //begin(), end(), rbegin(), rend(), size()
+//     //begin(), end(), rbegin(), rend(), size()
     
-    //empty() and swap() are same as those of vector
+//     //empty() and swap() are same as those of vector
     
-    //{1,2,3,4,5}
-    auto it1=st.find(3); //it will return iterator
+//     //{1,2,3,4,5}
+//     auto it1=st.find(3); //it will return iterator
     
-    //{1,2,3,4,5}
-    auto it2=st.find(6); //if element is not in the set then it will return st.end()
+//     //{1,2,3,4,5}
+//     auto it2=st.find(6); //if element is not in the set then it will return st.end()
     
-    //{1,2,5}
-    st.erase(5);//erase 5 amd it will be {1,2}//takes logaritmic time
+//     //{1,2,5}
+//     st.erase(5);//erase 5 amd it will be {1,2}//takes logaritmic time
     
-    int cnt=st.count(1); //ye ya to 1 dega ya fr 0 dega because set stores unique elements to fr element hoga to 1 hi baar hoga ya fr nhi hoga
+//     int cnt=st.count(1); //ye ya to 1 dega ya fr 0 dega because set stores unique elements to fr element hoga to 1 hi baar hoga ya fr nhi hoga
     
-    auto it3=st.find(3);
-    st.erase(it);//it takes constant time
+//     auto it3=st.find(3);
+//     st.erase(it);//it takes constant time
     
-    //{1,2,3,4,5}
+//     //{1,2,3,4,5}
     
-    auto it4=st.find(2);
-    auto it5=st.find(4);
-    st.erase(it4,it5); //st.erase(start,end) end is not included and it will give{1,4,5} idr apn ek range m erase kr rhe h 2 s lekr 4 tk but 4th position wala include nbhi hoga
+//     auto it4=st.find(2);
+//     auto it5=st.find(4);
+//     st.erase(it4,it5); //st.erase(start,end) end is not included and it will give{1,4,5} idr apn ek range m erase kr rhe h 2 s lekr 4 tk but 4th position wala include nbhi hoga
     
-    //s[0];   // ❌
-    //other functions same as vector
-    //lower_bound() and upper_bound() function works in the same way
+//     //s[0];   // ❌
+//     //other functions same as vector
+//     //lower_bound() and upper_bound() function works in the same way
     
-    //as in vector it does
+//     //as in vector it does
     
     
 
 
-}
-int main(){
-    explainSet();
+// }
+// int main(){
+//     explainSet();
     
-}
+// }
 
+//every operation in set takes logaritmic time
 
 //upper_bound and lower_bound
 //For a sorted vector:
@@ -411,7 +427,7 @@ int main(){
 //     return 0;
 // }
     
-  //Count occurrences....
+  //Count occurrences
   
 //   int frequency = ub - lb;
 // cout << "Frequency: " << frequency << endl; //prints: Frequency: 3
@@ -419,3 +435,126 @@ int main(){
 
 //v.end(): last element ko point nahi karta. Ye last element ke just baad ko point karta hai.
 
+
+//MULTISET:
+// multiset is a STL container that:
+
+// elements ko sorted order mein rakhta hai
+// duplicates allow karta hai
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void explainMultiset(){
+//     multiset<int> ms;
+//     ms.insert(1); //{1}
+//     ms.insert(1); //{1,1}
+//     ms.insert(1); //{1,1,1}
+    
+//     ms.erase(1); //all 1's erased
+    
+//     int cnt=ms.count(1);
+    
+//     ms.erase(ms.find(1)); //it erase the 1 which is at posiiton 1
+    
+//     ms.erase(ms.find(1),ms.find(1)+2); //erase(start,end)
+    
+    
+//     //and remaining functions are same as set
+// }
+// int main(){
+//     explainMultiset();
+// }
+
+
+//MAP: map ek STL container hai jo data ko key-value pairs mein store karta hai.
+// Example: Student ki ID aur marks store karna.
+// map<int, int> m;
+
+// m[101] = 85;
+// m[102] = 90;
+// m[103] = 75;
+
+// Yahan:
+// - First int = key (student ID)
+// - Second int = value (marks)
+// Important: map keys ko automatically ascending order mein rakhta hai aur duplicate keys allow nahi karta.
+
+//Map declare aur print kaise karein?
+
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main() {
+//     map<int, int> m;
+//     m[3] = 30;
+//     m[1] = 10;
+//     m[2] = 20;
+//     for(auto it : m) {
+//         cout << it.first << " " << it.second << endl;
+//     }
+// }
+
+//OUTPUT:
+// 1 10
+// 2 20
+// 3 30
+
+//map ascending order m output deta input apn n kese bi diya ho map usko sort krdeta h or ascending m apn ko output deta ho
+// it.first → key
+// it.second → value
+
+// /Map mein elements insert karne ke methods
+//Method 1: m[key] = value
+// map<int, int> m;
+// m[1] = 100;
+// m[2] = 200;
+// m[1] = 500;
+
+//idr Ab key 1 ki value 500 hogi, kyunki same key ko dobara assign karne par purani value update ho jaati hai.
+
+// Method 2: insert()
+// m.insert({3, 300});
+
+// Method 3: emplace()
+// m.emplace(4, 400);
+
+//map mein ek key sirf ek baar hoti hai. Duplicate key insert karne par existing
+//entry replace nahi hoti; lekin m[key] = value se value update ho sakti hai.
+
+//Common operations
+
+// m.size() — total key-value pairs ki count.
+
+// m.empty() — map empty hai ya nahi.
+
+// m.erase(key) — given key ko remove karta hai.
+
+// m.clear() — saare elements remove karta hai.
+
+// m.count(key) — key present hai toh 1, otherwise 0.
+
+// m.find(key) — key ka iterator return karta hai; key missing ho toh m.end() return karta hai.
+
+// Time complexity — interview ke liye important
+// map internally usually a balanced binary search tree (Red-Black Tree) use karta hai.
+// Operation	Time complexity
+// Insert/emplace()	\(O(\log n)\)
+// Find/count()	\(O(\log n)\)
+// erase(key)	\(O(\log n)\)
+// Access/update using m[key]	\(O(\log n)\)
+// Traversal	\(O(n)\)
+//map vs unordered_map vs multimap
+
+// map
+// - Keys sorted order mein.
+// - Duplicate keys allowed nahi.
+// - Operations generally \(O(\log n)\).
+// unordered_map
+// - Keys ka sorted order nahi hota.
+// - Duplicate keys allowed nahi.
+// - Operations average \(O(1)\), worst case \(O(n)\).
+// multimap
+// - Keys sorted order mein.
+// - Duplicate keys allowed.
+// - Operations generally \(O(\log n)\).
+// - m[key] se access nahi kar sakte; iterator ya find() use karo.
