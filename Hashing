@@ -53,7 +53,6 @@
 //     int q;//kitni queries aayengi.
 //     cin>>q;//queries input
 //     while(q>0){//Jab tak q zero se bada hai, loop chalega.
-
 //         int number; //Query wala number store karne ke liye variable banaya.
 //         cin>>number;//User se number input liya.
 //         cout<<hash[number]<<" ";//Us number ki frequency print ki.
@@ -250,37 +249,39 @@
 
 // OR ELSE IF M YE CHECK KREGA AGAR COUNT OR MAXFREQ EQUAL HOJATE H OR CURRENT ITH POSITION PR JO BI NUMBER HOGA WO AGAR ans
 //SE CHOTA H TO ANS M WO ELEMENT STORE HOJYEGA OR LAST M ANS M JO BI HOGA WO RETURN KRDEGA 
-#include<bits/stdc++.h>
-using namespace std;
-int main(){
-    int n;
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
-    }
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
     
-    int maxfreq=0;
-    int ans=0;
+//     int maxfreq=0;
+//     int ans=0;
     
-    for(int i=0;i<n;i++){
-        int count=0;
-        for(int j=0;j<n;j++){
-            if(arr[i]==arr[j]){
-                count++;
-            }
-        }
-        if(count>maxfreq){
-        maxfreq=count;
-        ans=arr[i];
+//     for(int i=0;i<n;i++){
+//         int count=0;
+//         for(int j=0;j<n;j++){
+//             if(arr[i]==arr[j]){
+//                 count++;
+//             }
+//         }
+//         if(count>maxfreq){
+//         maxfreq=count;
+//         ans=arr[i];
             
-        }
-        else if(count==maxfreq&&arr[i]<ans){
-            ans=arr[i];
+//         }
+//         else if(count==maxfreq&&arr[i]<ans){
+//             ans=arr[i];
             
-        }
+//         }
         
-    }
-    cout << ans << endl;
+//     }
+//     cout << ans << endl;
     
-}
+// }
+
+
