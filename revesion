@@ -510,3 +510,47 @@ int main(){
     
 }
 
+//List: List is a doubly linked list in C++ STL where elements 
+//are stored in non-contiguous memory, and insertion/deletion can 
+//be efficiently performed at both ends and at a known position.
+// #include<bits/stdc++.h>
+// using namespace std;
+// void explainList(){
+//     list<int> ls;
+//     ls.push_back(2);//{2}
+//     ls.emplace_back(4);//{2,4}
+    
+//     ls.push_front(5);//{5,2,4}
+//     ls.emplace_front(9); 
+
+// List vs Deque in C++ (Hinglish)
+
+// - List: Doubly linked list hoti hai. Front aur back dono se insertion/deletion O(1) mein kar sakte hain. Middle mein insertion/deletion bhi O(1) hoti hai, agar iterator available ho. Lekin l[i] se direct access nahi kar sakte.
+
+// - Deque: Multiple memory blocks mein elements store hote hain. Front aur back dono se insertion/deletion O(1) mein kar sakte hain. d[i] se direct access bhi O(1) mein kar sakte hain.
+
+// Main difference: list mein direct indexing nahi hoti, jabki deque mein hoti hai.
+    
+    
+//     //rest function same as vector
+//     //begin,end,rbegin,rend,clear,insert,size,swap
+    
+//     //in list we cannot access element like this 
+//     //cout<<ls[0]<<" ";
+    
+//     //we need to traverse list like this
+//     for(int x : ls) {
+//         cout << x << " ";
+//     }
+// }
+// int main(){
+//     explainList();
+// }
+
+////rest functions same as Vector
+    //begin,end,rbegin,rend,clear,insert,size,swap
+
+
+// //Vector: Dynamic array → fast access using index.
+// ///List: Doubly linked list → efficient insertion/deletion, but no direct index access.
+
