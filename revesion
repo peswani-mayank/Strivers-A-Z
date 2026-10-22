@@ -551,6 +551,8 @@ int main(){
     //begin,end,rbegin,rend,clear,insert,size,swap
 
 
+
+
 // //Vector: Dynamic array → fast access using index.
 // ///List: Doubly linked list → efficient insertion/deletion, but no direct index access.
 
