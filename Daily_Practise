@@ -147,3 +147,476 @@ int main(){
 
 
 
+//PATTERNS
+//in pattern there will be nested loop..
+
+//1.for the outer loop, count numer of lines/row
+//2.for the inner loop, cont number of colums and connect then somehow with rows
+//3.whatever we are printing print them inside the inner for loop
+//observe symmetry in pattern
+
+//PATTERN 1:
+
+// #include<iostream>
+// using namespace std;
+// void pattern1(int n){
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<n;j++){ 
+            //idr j ko apn ne n tk isliye liye because jitne rows h utne hi stars 
+            //print krna h har row m
+            // j = 0 → print *
+            // j = 1 → print *
+            // j = 2 → print *
+            // j = 3 → 3 < 3 is false → stop
+//             cout<<"* ";
+//         }
+//         cout<<endl; //once condition fails of inner
+            //loop moves to the next line. 
+//     }
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     pattern1(n);
+//if we need to run code for multiple testcases we write in this way in the int main
+//      for(int i=0;i<test;i++){
+//          int test;
+//          cin>>test;
+//          patterrn1(n)
+//  }
+// }
+
+//PATTERN 2 
+// #include<iostream>
+// using namespace std;
+// void pattern2(int n){
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<=i;j++){
+//             cout<<"* ";
+//         }
+//         cout<<endl;
+//     }
+    
+// }
+// int main(){
+//      int n;
+//     cin>>n;
+//     pattern2(n);
+// }
+
+
+// // i = 0
+//     j = 0 → * 
+//     j = 1 → stop
+
+// i = 1
+//     j = 0 → *
+//     j = 1 → *
+//     j = 2 → stop
+
+// i = 2
+//     j = 0 → *
+//     j = 1 → *
+//     j = 2 → *
+//     j = 3 → stop
+
+// i = 3
+//     j = 0 → *
+//     j = 1 → *
+//     j = 2 → *
+//     j = 3 → *
+//     j = 4 → stop
+
+// i = 4
+//     j = 0 → *
+//     j = 1 → *
+//     j = 2 → *
+//     j = 3 → *
+//     j = 4 → *
+//     j = 5 → stop
+
+
+//PATTERN 3 
+// #include<iostream>
+// using namespace std;
+// void pattern3(int n){
+//     for(int i=0;i<n;i++){
+//         for(int j=1;j<=i;j++){
+//             cout<<j<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     pattern3(n);
+// }
+
+// /i = 0
+//     j = 1
+//     1 <= 0 → false
+//     → nothing printed
+//     → next line
+
+// i = 1
+//     j = 1
+//     1 <= 1 → true → print 1
+//     j = 2
+//     2 <= 1 → false
+//     → next line
+
+// i = 2
+//     j = 1 → print 1
+//     j = 2 → print 2
+//     j = 3 → stop
+//     → next line
+
+// i = 3
+//     j = 1 → print 1
+//     j = 2 → print 2
+//     j = 3 → print 3
+//     j = 4 → stop
+//     → next line
+
+// i = 4
+//     j = 1 → print 1
+//     j = 2 → print 2
+//     j = 3 → print 3
+//     j = 4 → print 4
+//     j = 5 → stop
+
+
+//PATTERN 4 
+// #include<iostream>
+// using namespace std;
+// void pattern4(int n){
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=i;j++){
+//             cout<<i<<" ";
+            
+//         }
+//         cout<<endl;
+//     }
+    
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     pattern4();
+// }
+
+// i = 1
+//     j = 1 → 1 <= 1 → print i → 1
+//     j = 2 → 2 <= 1 → false
+
+//     Output: 1
+
+
+// i = 2
+//     j = 1 → 1 <= 2 → print i → 2
+//     j = 2 → 2 <= 2 → print i → 2
+//     j = 3 → 3 <= 2 → false
+
+//     Output: 2 2
+
+
+// i = 3
+//     j = 1 → 1 <= 3 → print i → 3
+//     j = 2 → 2 <= 3 → print i → 3
+//     j = 3 → 3 <= 3 → print i → 3
+//     j = 4 → 4 <= 3 → false
+
+//     Output: 3 3 3
+
+
+// i = 4
+//     j = 1 → 1 <= 4 → print i → 4
+//     j = 2 → 2 <= 4 → print i → 4
+//     j = 3 → 3 <= 4 → print i → 4
+//     j = 4 → 4 <= 4 → print i → 4
+//     j = 5 → 5 <= 4 → false
+
+//     Output: 4 4 4 4
+
+
+// i = 5
+//     j = 1 → 1 <= 5 → print i → 5
+//     j = 2 → 2 <= 5 → print i → 5
+//     j = 3 → 3 <= 5 → print i → 5
+//     j = 4 → 4 <= 5 → print i → 5
+//     j = 5 → 5 <= 5 → print i → 5
+//     j = 6 → 6 <= 5 → false
+
+//     Output: 5 5 5 5 5
+
+
+
+//PATTERN 5
+// #include<iostream>
+// using namespace std;
+// void pattern5(int n){
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n-i+1;j++){
+//             cout<<"* ";
+            
+//         }
+//         cout<<endl;
+//     }
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     pattern5(n);
+// }
+
+
+//PATTERN 6 
+// #include<iostream>
+// using namespace std;
+// void pattern6(int n){
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n-i+1;j++){
+//             cout<<j<<" ";
+//         }
+//         cout<<endl;
+//     }
+    
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     pattern6(n);
+    
+// }
+
+
+
+//PATTERN 7 
+
+// i = 0 → 4 spaces + 1 star  + 4 spaces
+//         →     *
+
+// i = 1 → 3 spaces + 3 stars + 3 spaces
+//         →    ***
+
+// i = 2 → 2 spaces + 5 stars + 2 spaces
+//         →   *****
+
+// i = 3 → 1 space  + 7 stars + 1 space
+//         →  *******
+
+// i = 4 → 0 spaces + 9 stars + 0 spaces
+//         → *********
+// #include<iostream>
+// using namespace std;
+// void pattern7(int n){
+//     for(int i=0;i<n;i++){
+//         //[space1,star, space2]
+//         //here pattern is space, pattern, space so we need to use 
+//         //3 inner loops one for spoace 1,second for star and third for space 2 
+        
+//         //space1
+//         for(int j=0;j<n-i-1;j++){
+//             cout<<" ";
+//         }
+//         //space2
+//         for(int k=0;k<2*i+1;k++){
+//             cout<<"*";
+//         }
+//         //space3
+//         for(int l=0;l<n-i-1;l++){
+//             cout<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     pattern7(n);
+// }
+// there are total 5 rows(0 to 4) and 9 columsns(0 to 8)
+//here pattern is[space,star,space]
+//     *    [4space,1 star, 4 space]
+//    ***   [3space,3 star, 3 space]
+//   *****  [2 space,5 star, 2 space]
+//  *******  [1 space,7 star, 1 space]
+// *********   [0 space, 9 star,0 space]
+
+
+//PATTERN 8 
+// #include<iostream>
+// using namespace std;
+// void pattern8(int n){
+//     for(int  i=0;i<n;i++){
+//         //[space1,star,space2]
+        
+//         //space1
+//         for(int j=0;j<i;j++){
+//             cout<<" ";
+//         }
+//         //star
+//         for(int k=0;k<2*n-2*i-1;k++){
+//             cout<<"*";
+            
+//         }
+        
+//         //space2
+//         for(int l=0;l<i;l++){
+//             cout<<" ";
+//         }
+//         cout<<endl;
+//     }
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     pattern8(n);
+// }
+/*
+
+DRY RUN:
+
+n = 5
+
+i = 0:
+j → 0 spaces
+k → 2*5-2*0-1 = 9 stars
+l → 0 spaces
+Output → *********
+
+i = 1:
+j → 1 space
+k → 2*5-2*1-1 = 7 stars
+l → 1 space
+Output →  *******
+
+i = 2:
+j → 2 spaces
+k → 2*5-2*2-1 = 5 stars
+l → 2 spaces
+Output →   *****
+
+i = 3:
+j → 3 spaces
+k → 2*5-2*3-1 = 3 stars
+l → 3 spaces
+Output →    ***
+
+i = 4:
+j → 4 spaces
+k → 2*5-2*4-1 = 1 star
+l → 4 spaces
+Output →     *
+
+FINAL OUTPUT:
+
+*********
+ *******
+  *****
+   ***
+    *
+*/
+
+//PATTERN 9
+
+//we can say this pattern is the combination of 
+//pattern 7 and pattern 8
+
+// #include<iostream>
+// using namespace std;
+// void pattern7(int n){
+//     for(int i=0;i<n;i++){
+//         //[space1,star, space2]
+//         //here pattern is space, pattern, space so we need to use 
+//         //3 inner loops one for spoace 1,second for star and third for space 2 
+        
+//         //space1
+//         for(int j=0;j<n-i-1;j++){
+//             cout<<" ";
+//         }
+//         //space2
+//         for(int k=0;k<2*i+1;k++){
+//             cout<<"*";
+//         }
+//         //space3
+//         for(int l=0;l<n-i-1;l++){
+//             cout<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+// // int main(){
+// //     int n;
+// //     cin>>n;
+// //     //pattern7(n);
+// // }
+
+// #include<iostream>
+// using namespace std;
+// void pattern8(int n){
+//     for(int  i=0;i<n;i++){
+//         //[space1,star,space2]
+        
+//         //space1
+//         for(int j=0;j<i;j++){
+//             cout<<" ";
+//         }
+//         //star
+//         for(int k=0;k<2*n-2*i-1;k++){
+//             cout<<"*";
+            
+//         }
+        
+//         //space2
+//         for(int l=0;l<i;l++){
+//             cout<<" ";
+//         }
+//         cout<<endl;
+//     }
+    
+// }
+// // int main(){
+// //     int n;
+// //     cin>>n;
+// //     //pattern8(n);
+// // }
+// void pattern9(int n){
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     pattern7(n);
+//     pattern8(n);
+// }
+
+
+//PATTERN10
+#include<iostream>
+using namespace std;
+void pattern10(int n){
+    for(int i=1;i<=2*n-1;i++){
+        int stars=i;
+        
+        if(i>n){
+            stars=2*n-i;
+        }
+        for(int j=1;j<=stars;j++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    
+}
+int main(){
+    int n;
+    cin>>n;
+    
+    pattern10(n);
+}
