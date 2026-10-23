@@ -92,6 +92,7 @@
 
 
 //DRY RUN:
+
 //int arr[n]={1,2,1,3,2}
 //q=3 //idr apn n 3 query leli mens apn ko in teen number ki frequency check krni h array m niche 1,2,3 number 
 //jinki apn ko freqency check krni h 
