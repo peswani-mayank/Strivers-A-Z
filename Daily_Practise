@@ -620,3 +620,567 @@ int main(){
     
     pattern10(n);
 }
+
+
+//STL(Standard Template Library)
+//in this file we are going to learn about c++ stl(standard template library)In C++, 
+//STL stands for Standard Template Library. It provides ready-made containers, algorithms, 
+//iterators, and utilities, so you don’t have to implement common data structures and algorithms yourself.
+//cpp stl is divided into four parts;
+//1.algorithms
+//2.containers
+//3.Functions
+//4.iterators
+
+//Pairs: it is part of utility Library
+// #include<bits/stdc++.h>
+// using namespace std;
+// void explainPair(){
+//     pair<int,int> p={1,3};
+//     cout<<p.first<<" "<<p.second;
+    
+//     //agar 3 elements store karne hain, to normal pair use nahi kar sakte, kyunki 
+//pair mein sirf 2 elements hote hain.
+//     //isliye uske liye nested pair use krna pdega
+
+//     pair<int, pair<int,int>> a={1,{3,4}};
+//     cout<<a.first<<" "<<a.second.first<<" "<<a.second.second;
+    
+//     pair<int,int> arr[]={{1,2},{2,3},{5,1}};
+//     cout<<arr[1].second;
+
+//WE CAN ALSO ACCESS LIKE THIS 
+
+// for(int i=0;i<3;i++) {
+//     cout<<arr[i].first<<" "<<arr[i].second<<endl;
+// }
+//we can also take different data types:
+// pair<int,string>p1={1,"Mayank"};
+// cout<<p1.second;
+// }
+// int main(){
+//     explainPair();
+// }
+
+//Vector: vector is an STL container that stores multiple elements of the same 
+//data type in a dynamic array.
+//vector is dynamic in nature 
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void explainVector(){
+    
+//     vector<int> v; //creates an empty container {}
+//     v.push_back(1); //push back of 1 in container v {1}
+//     v.emplace_back(2);//it is similar to push_back it dynamically increases the size and insert 2 {1,2}
+    
+//     vector<pair<int,int>> vec;//we can define vector of pair type
+//     vec.push_back({1,2}); // when we are using push_back in pair type with vector we need to write in curly braces
+//     vec.emplace_back(1,2); //but in emplace_back we no need to write values in curly braces it automatically assumes  
+//that's why emplace_back is faster than push_back
+    
+//     vector<int> v4(5,100); //it is the container v4 of size 5 which having 5 instances of 100 {100,100,100,100,100} 
+//and if we want to increase the size of container we can increase just using push_back the new element will be insert 
+//in the end 
+    
+//     vector<int> v5(3); //it is the container of size 3 with the 3 instances of 0 or garbage value 
+//its depend on compiler {0,0,0}
+    
+//     vector<int> v1(3,6); //it is container of size 3 with the 3 instances of 6 {6,6,6}
+//     vector<int> v2(v1); //v2 container is the copy of v1 conatiner {6,6,6}
+    
+//     //here is the accessing of vector element method 1
+//     vector<int> v3 = {10, 20, 30, 40};
+//     cout << v3[0] << endl;
+//     cout << v3[1] << endl;
+    
+//     //here is the other way of accessing element iterator
+// //basically iterator points to the memory
+
+//     vector<int>::iterator it=v3.begin(); //inplace of it can be anything it is just a name
+//     //and here v.begin will point to memory of element not to the the element
+//     it++; //moves to next means here we are saying move to next element
+//     cout<< *(it)<<" "<<endl; // as v.begin point to memory of element and we want element that's 
+//why we use * here like pointer
+    
+//     it=it+2; //here we are saying move position next 2 means 2 positon aage jana h or wo element 
+//print krwana h
+//     cout<< *(it)<<" "<<endl;
+    
+    
+//     //here are some another iterators 
+//     vector<int>::iterator it1=v3.end();
+//     vector<int>::reverse_iterator it2 = v3.rend(); //it is reverse end
+//     vector<int>::reverse_iterator it3 = v3.rbegin(); //it is reverse begin
+    
+// //     v.begin()   → iterator
+// //     v.end()     → iterator
+// //     v.rbegin()  → reverse_iterator
+// //     v.rend()    → reverse_iterator
+    
+//     cout<<v3.back()<<" "<<endl;
+//v.back() means the last element of the vector.
+    
+    
+//     //here how we can print entire vector using for loop
+    
+//     for(vector<int>::iterator it4=v3.begin();it!=v3.end();it4++){
+//         cout<<*(it4)<<" ";
+//     }
+    
+//     //another method to print entire vector using auto 
+    
+//     for(auto it5=v3.begin();it5!=v3.end();it5++){ //it automatically convert it in iterator
+//         cout<<*(it5)<<" ";
+//     }
+    
+//     //other way to print vector using for each loop
+//     for(auto it6 :v3){
+//         cout<< it6<< " ";
+//     }
+    
+//     //here we learn deletion of vector:v.begin() is 10  so v.begin()+1 will be 20
+//     v3.erase(v.begin()+1); //{10,30,40}
+    
+//     //if we want to erase elements from one position to another position like in range: we use 
+//v3.erase(start,end) here end is not included
+//     v3.erase(v3.begin()+1,v3.begin()+3); //{10,40}
+    
+//     //insert Functions
+//     vector<int> v5(2,100);//{100,100}
+//     v5.insert(v5.begin(),300); //it will insert in the beginning
+//     //{300,100,100}
+     
+//     v5.insert(v5.begin()+1,2,10);//{300,10,10,100,100}
+//     //here v5.begin()+1 is second position
+//     //2 is  number of instances we want to add 
+//     //10 is element which we want to add 
+    
+//     vector<int> copy(2,50);//{50,50}
+//     v5.insert(v5.begin(),copy.begin(),copy.end());//{50,50,300,10,10,100,100}
+    
+//     cout<<v3.size();//gives the size of vector
+    
+    
+//     //v3.swap(v5);
+//     //swap the vectors
+    
+//     //v5.clear();
+//     //erases the entire vector
+    
+//     //cout<<v.empty();
+    
+// }
+// int main(){
+//     explainVector();
+    
+// }
+
+
+// push_back   → create object → put it in vector
+// emplace_back → create object directly inside vector
+ 
+//List: List is a doubly linked list in C++ STL where elements 
+//are stored in non-contiguous memory, and insertion/deletion can 
+//be efficiently performed at both ends and at a known position.
+// #include<bits/stdc++.h>
+// using namespace std;
+// void explainList(){
+//     list<int> ls;
+//     ls.push_back(2);//{2}
+//     ls.emplace_back(4);//{2,4}
+    
+//     ls.push_front(5);//{5,2,4}
+//     ls.emplace_front(9); 
+
+// ls.pop_back();
+// ls.pop_front();
+
+// List vs Deque in C++ (Hinglish)
+
+// - List: Doubly linked list hoti hai. Front aur back dono se insertion/deletion O(1) mein kar sakte hain. Middle mein insertion/deletion bhi O(1) hoti hai, agar iterator available ho. Lekin l[i] se direct access nahi kar sakte.
+
+// - Deque: Multiple memory blocks mein elements store hote hain. Front aur back dono se insertion/deletion O(1) mein kar sakte hain. d[i] se direct access bhi O(1) mein kar sakte hain.
+
+// Main difference: list mein direct indexing nahi hoti, jabki deque mein hoti hai.
+    
+    
+//     //rest function same as vector
+//     //begin,end,rbegin,rend,clear,insert,size,swap
+    
+//     //in list we cannot access element like this 
+//     //cout<<ls[0]<<" ";
+    
+//     //we need to traverse list like this
+//     for(int x : ls) {
+//         cout << x << " ";
+//     }
+// }
+// int main(){
+//     explainList();
+// }
+
+////rest functions same as Vector
+    //begin,end,rbegin,rend,clear,insert,size,swap
+
+
+// //Vector: Dynamic array → fast access using index.
+// ///List: Doubly linked list → efficient insertion/deletion, but no direct index access.
+
+
+//Deque: A deque (double-ended queue) is an STL container that allows insertion and deletion 
+//of elements from both the front and the back.
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// void explainDeque(){
+//     deque<int> dq;
+//     dq.push_back(2);
+//     dq.emplace_back(4);
+    
+//     dq.push_front(3);
+//     dq.emplace_front(1);
+    
+//     dq.pop_back();
+//     dq.pop_front();
+    
+//     dq.back();
+    
+//     dq.front();
+    
+//     //rest functions same as Vector
+//     //begin,end,rbegin,rend,clear,insert,size,swap
+//     for(int x:dq){
+//         cout<<x<<" ";
+//     }
+// }
+
+// int main(){
+//     explainDeque();
+// }
+
+
+//Stack: A stack is a linear data structure that follows LIFO — Last In, First Out.
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void explainStack(){
+//     stack<int> st;
+//     st.push(1); //{1}
+//     st.push(2); //{2,1}
+//     st.push(3); //{3,2,1}
+//     st.push(4); //{4,3,2,1}
+    
+//     st.emplace(5); //{5,4,3,2,1}
+//     //in stack indexing is not allowed 
+//     //we cannot acccess st[2] it is invalid in stack
+    
+//     cout<<st.top();
+//     st.pop();
+//     cout<<st.top();
+//     cout<<st.size();
+    
+//     cout<<st.empty();
+    
+//     stack<int> st1,st2;
+//     st1.swap(st2);;
+    
+//     //here every operation is taking same time o(1)
+// }
+
+
+// int main(){
+//     explainStack();
+// }
+
+
+
+//complexity: all operations in constant time o(1);
+
+
+//Queue: Queue is a linear data structure that follows FIFO — First In, First Out.
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void explainQueue(){
+//     queue<int> q;
+//     q.push(1); //{1}
+//     q.push(2); //{1,2}
+//     q.emplace(4); //{1,2,4}
+    
+//     q.back()+=5; 
+//     cout<<q.back(); //prints 9
+    
+//     cout<<q.front(); //prints 1
+    
+//     q.pop(); //{2,9}
+    
+//     cout<<q.front(); //prints 2
+    
+//     //size,swap,empty same as stack
+    
+// }
+// int main(){
+//     explainQueue();
+// }
+
+//complexity: all operations in constant time o(1);
+
+//Priority Queue: A priority queue is an STL container in which the element with the highest priority is always accessed first.
+// #include<bits/stdc++.h>
+// using namespace std;
+// void ExplainPriorityQueue(){
+//     priority_queue<int> pq;
+//     //maximum elements stay at top 
+//     pq.push(5); //{5}
+//     pq.push(2); //{5,2}
+//     pq.push(8); //{8,5,2}
+//     pq.emplace(10); //{10,8,5,2}
+    
+//     cout<<pq.top(); //prints 10
+    
+//     pq.pop();//{8,5,2}
+//     //size,swap,empty same as stack
+//     cout<<pq.top();//prints 8
+    
+//     //Minimum Heap 
+//     //if we want minimum element in the top 
+//     priority_queue<int,vector<int>,greater<int>>pq1;
+//     pq1.push(5); //{5}
+//     pq1.push(2); //{2,5}
+//     pq1.push(8); //{2,5,8}
+//     pq1.emplace(10); //{2,5,8,10}
+    
+//     pq1.top();  //prints 2
+    
+// }
+// int main(){
+//     ExplainPriorityQueue();
+    
+// }
+
+// //push and pop in o(logn)
+// //top in o(1);
+
+
+//Set: A set is an STL container that stores unique elements in sorted order
+// #include<bits/stdc++.h>
+// using namespace std;
+// void explainSet(){
+//     set<int> st;
+//     st.insert(1);//{1}
+//     st.insert(2);//{1,2}
+//     st.insert(2);//{1,2}
+//     st.insert(4);//{1,2,4}
+//     st.insert(3);//{1,2,3,4}
+    
+//     //functionality of insert in vector can also be used that only increases efficiency
+    
+//     //begin(), end(), rbegin(), rend(), size()
+    
+//     //empty() and swap() are same as those of vector
+    
+//     //{1,2,3,4,5}
+//     auto it1=st.find(3); //it will return iterator
+    
+//     //{1,2,3,4,5}
+//     auto it2=st.find(6); //if element is not in the set then it will return st.end()
+    
+//     //{1,2,5}
+//     st.erase(5);//erase 5 amd it will be {1,2}//takes logaritmic time
+    
+//     int cnt=st.count(1); //ye ya to 1 dega ya fr 0 dega because set stores unique elements to fr element hoga to 1 hi baar hoga ya fr nhi hoga
+    
+//     auto it3=st.find(3);
+//     st.erase(it);//it takes constant time
+    
+//     //{1,2,3,4,5}
+    
+//     auto it4=st.find(2);
+//     auto it5=st.find(4);
+//     st.erase(it4,it5); //st.erase(start,end) end is not included and it will give{1,4,5} idr apn ek range m erase kr rhe h 2 s lekr 4 tk but 4th position wala include nbhi hoga
+    
+//     //s[0];   // ❌
+//     //other functions same as vector
+//     //lower_bound() and upper_bound() function works in the same way
+    
+//     //as in vector it does
+    
+    
+
+
+// }
+// int main(){
+//     explainSet();
+    
+// }
+
+//every operation in set takes logaritmic time
+
+//upper_bound and lower_bound
+//For a sorted vector:
+// lower_bound(x) → first element ≥ x
+// upper_bound(x) → first element > x
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int main() {
+
+//     vector<int> v = {1, 2, 2, 2, 4, 5, 7};
+
+//     int x = 2;
+
+//     // Lower Bound
+//     auto lb = lower_bound(v.begin(), v.end(), x);
+
+//     // Upper Bound
+//     auto ub = upper_bound(v.begin(), v.end(), x);
+//v.begin(), v.end() ye isliye use kiye h ye btate h ki kha s kha tk search krna h
+
+
+//     cout << "Lower Bound: " << *lb << endl;
+//     cout << "Upper Bound: " << *ub << endl;
+
+//     // Find their indexes
+//     cout << "Lower Bound Index: " << lb - v.begin() << endl;
+//     cout << "Upper Bound Index: " << ub - v.begin() << endl;
+
+//     return 0;
+// }
+    
+  //Count occurrences
+  
+//   int frequency = ub - lb;
+// cout << "Frequency: " << frequency << endl; //prints: Frequency: 3
+
+
+//v.end(): last element ko point nahi karta. Ye last element ke just baad ko point karta hai.
+
+
+//MULTISET:
+// multiset is a STL container that:
+
+// elements ko sorted order mein rakhta hai
+// duplicates allow karta hai
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void explainMultiset(){
+//     multiset<int> ms;
+//     ms.insert(1); //{1}
+//     ms.insert(1); //{1,1}
+//     ms.insert(1); //{1,1,1}
+    
+//     ms.erase(1); //all 1's erased
+    
+//     int cnt=ms.count(1);
+    
+//     ms.erase(ms.find(1)); //it erase the 1 which is at posiiton 1
+    
+//     ms.erase(ms.find(1),ms.find(1)+2); //erase(start,end)
+    
+    
+//     //and remaining functions are same as set
+// }
+// int main(){
+//     explainMultiset();
+// }
+
+
+//MAP: map ek STL container hai jo data ko key-value pairs mein store karta hai.
+// Example: Student ki ID aur marks store karna.
+// map<int, int> m;
+
+// m[101] = 85;
+// m[102] = 90;
+// m[103] = 75;
+
+// Yahan:
+// - First int = key (student ID)
+// - Second int = value (marks)
+// Important: map keys ko automatically ascending order mein rakhta hai aur duplicate keys allow nahi karta.
+
+//Map declare aur print kaise karein?
+
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main() {
+//     map<int, int> m;
+//     m[3] = 30;
+//     m[1] = 10;
+//     m[2] = 20;
+//     for(auto it : m) {
+//         cout << it.first << " " << it.second << endl;
+//     }
+// }
+
+//OUTPUT:
+// 1 10
+// 2 20
+// 3 30
+
+//map ascending order m output deta input apn n kese bi diya ho map usko sort krdeta h or ascending m apn ko output deta ho
+// it.first → key
+// it.second → value
+
+// /Map mein elements insert karne ke methods
+//Method 1: m[key] = value
+// map<int, int> m;
+// m[1] = 100;
+// m[2] = 200;
+// m[1] = 500;
+
+//idr Ab key 1 ki value 500 hogi, kyunki same key ko dobara assign karne par purani value update ho jaati hai.
+
+// Method 2: insert()
+// m.insert({3, 300});
+
+// Method 3: emplace()
+// m.emplace(4, 400);
+
+//map mein ek key sirf ek baar hoti hai. Duplicate key insert karne par existing
+//entry replace nahi hoti; lekin m[key] = value se value update ho sakti hai.
+
+//Common operations
+
+// m.size() — total key-value pairs ki count.
+
+// m.empty() — map empty hai ya nahi.
+
+// m.erase(key) — given key ko remove karta hai.
+
+// m.clear() — saare elements remove karta hai.
+
+// m.count(key) — key present hai toh 1, otherwise 0.
+
+// m.find(key) — key ka iterator return karta hai; key missing ho toh m.end() return karta hai.
+
+// Time complexity — interview ke liye important
+// map internally usually a balanced binary search tree (Red-Black Tree) use karta hai.
+// Operation	Time complexity
+// Insert/emplace()	\(O(\log n)\)
+// Find/count()	\(O(\log n)\)
+// erase(key)	\(O(\log n)\)
+// Access/update using m[key]	\(O(\log n)\)
+// Traversal	\(O(n)\)
+//map vs unordered_map vs multimap
+
+// map
+// - Keys sorted order mein.
+// - Duplicate keys allowed nahi.
+// - Operations generally \(O(\log n)\).
+// unordered_map
+// - Keys ka sorted order nahi hota.
+// - Duplicate keys allowed nahi.
+// - Operations average \(O(1)\), worst case \(O(n)\).
+// multimap
+// - Keys sorted order mein.
+// - Duplicate keys allowed.
+// - Operations generally \(O(\log n)\).
+// - m[key] se access nahi kar sakte; iterator ya find() use karo.
+
