@@ -92,7 +92,6 @@
 
 
 //DRY RUN:
-
 //int arr[n]={1,2,1,3,2}
 //q=3 //idr apn n 3 query leli mens apn ko in teen number ki frequency check krni h array m niche 1,2,3 number 
 //jinki apn ko freqency check krni h 
@@ -277,8 +276,7 @@
 //         }
 //         else if(count==maxfreq&&arr[i]<ans){
 //             ans=arr[i];
-
-
+            
 //         }
         
 //     }
@@ -287,3 +285,48 @@
 // }
 
 
+//Sum of Highest and Lowest Frequency
+// Given an array of n integers, find the sum of the frequencies of the highest 
+// occurring number and lowest occurring number.
+// Example 1:
+// Input: arr = [1, 2, 2, 3, 3, 3]
+
+// Output: 4
+
+// Explanation: The highest frequency is 3 (element 3), and the lowest frequency is 
+// 1 (element 1). Their sum is 3 + 1 = 4.
+
+//SOLUTION:
+// class Solution {
+//   public:
+//     int findSum(vector<int>& arr) {
+//         // code here
+//     //isme apn n array ki sizze input li h
+//     //fr frequency count k map bnaya h or loop chala kr map m frequecy store ki h
+//     //fr 2 variable le liye h maxfreq or minfreq
+//     //maxfreq ko 0 s initilaize kiya h agar aage frequecny kisi ki 0 s badi aaye to apn 
+//     //usko maxfreq m store krde means agar kisi ki freuency maxfreq s jyada aaye to 
+//     //apn maxfreq ko update krdege highest frequency s
+//     //min frequency ko n s initialise kiya because maximum frequency n hi ho skti h
+//     //baaki sb n s choti hi hogi taaki compare kre or agar apn ko kahi bi
+//     //frequency n s choti milti h to apn usko minfreq m update krdenge
+//     //fr last m maxfreq or min freq ka sum return krdiya h
+//         int n=arr.size();
+//         map<int,int>mp;
+//         for(int i=0;i<n;i++){
+//             mp[arr[i]]++;
+//         }
+//         int maxfreq=0;
+//         int minfreq=n;
+//         for(auto it:mp){
+//             if(it.second>maxfreq){
+//                 maxfreq=it.second;
+//             }
+//             if(it.second<minfreq){
+//                 minfreq=it.second;
+//             }
+            
+//         }
+//         return maxfreq+minfreq;
+//     }
+// };
