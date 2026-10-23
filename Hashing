@@ -277,7 +277,8 @@
 //         }
 //         else if(count==maxfreq&&arr[i]<ans){
 //             ans=arr[i];
-            
+
+
 //         }
         
 //     }
