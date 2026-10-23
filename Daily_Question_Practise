@@ -1,0 +1,402 @@
+//1.MIN AND MAX IN ARRAY
+
+//QUESTION:
+
+//Given an array arr[]. Your task is to find the minimum and maximum elements in the array.
+//Examples:
+//Input: arr[] = [1, 4, 3, 5, 8, 6]
+// /Output: [1, 8]
+// Explanation: minimum and maximum elements of array are 1 and 8.
+
+//SOLUTION
+
+// class Solution {
+//   public:
+//     vector<int> getMinMax(vector<int> &arr) {
+//         // code here
+//         int n=arr.size();
+//         int max=arr[0];
+//         int min=arr[0];
+//         for(int i=0;i<n;i++){
+//             if(arr[i]<min){
+//                 min=arr[i];
+//             }
+//             if(arr[i]>max){
+//                 max=arr[i];
+//             }
+//         }
+//         return {min,max};
+//     }
+// };
+
+//2.MAP OPERATION
+
+//QUESTION
+
+//You are given an array arr. You need to insert the elements of arr into a 
+// map(element as key and index as value). Also, you need to erase a given element 
+// x from the map and print "erased x" if successfully erased, else print "not found".
+// Complete print() function to print the map.
+
+//Solution
+
+// map<int, int> mapInsert(vector<int>& arr) {
+//     map<int, int> mp;
+//     // Insert arr[i] as key and i as value
+//     int n=arr.size();
+//     for(int i=0;i<n;i++){
+//         mp[arr[i]] = i;
+//     }
+    
+
+//     return mp;
+// }
+
+// void mapDisplay(map<int, int>& mp) {
+//     // Print every key and value pair in a new line
+//     for(auto it:mp){
+//         cout<<it.first<<" "<<it.second<<endl;
+//     }
+// }
+
+
+// void mapErase(map<int, int>& mp, int x) {
+//     // Check whether x exists
+//     if(mp.find(x) != mp.end()) {
+//         mp.erase(x);
+//         cout << "erased " << x;
+//     }
+//     else {
+//         cout << "not found";
+//     }
+
+//     cout << endl;
+// }
+
+//3.TWICE COUNTER
+
+//QUESTION
+
+// Given a list of words. Count the number of words that appear exactly twice in the list.
+// Examples:
+// Input: list[] = [Geeks, For, Geeks]
+// Output: 1
+// Explanation: 'Geeks' is the only word that appears twice. 
+
+//Solution
+
+// class Solution {
+//   public:
+//     int countWords(vector<string> &list) {
+//         // code here.
+//         //isme apn n phele map bnaya or fr loop chalya string wali list m
+//         //or isme apn n sbhi strings ki frequencies ko count krke map m store 
+//         //ki h fr count variable bnaya h fr apn frequecny wale map m chalege
+//         //usme loop chalaya or check kiya ki jis bi string ki frequency 2 
+//         //usko count increase krte jao or total return apn ko jin bi string ki frequecy 2
+//         //h to is loop m wo check krega jin bi string ki frequecy 2 hoga utna count
+//         //increase hota rhega or count return hojyega
+//         map<string,int>mp;
+//         for(auto it:list){
+//             mp[it]++;
+//         }
+//         int count=0;
+//         for(auto it:mp){
+//             if(it.second==2){
+//                 count++;
+//             }
+//         }
+//         return count;
+//     }
+// };
+
+
+//4.MULTIMAP OPERATIONS
+
+//QUESTION
+
+// You are given an array arr. You need to insert the elements of arr into a 
+// multimap(element as key and index as value). Also, you need to erase a given 
+// element x from the multimap and print "erased x" if successfully erased, else print "not found".
+// Complete print() function to print the multimap.
+
+//Solution
+
+// multimap<int, int> multimapInsert(vector<int>& arr) {
+//     multimap<int, int> mp;
+//     // Insert arr[i] as key and i as value in the multimap
+//     int n=arr.size();
+//     for(int i=0;i<n;i++){
+//         mp.insert({arr[i], i});
+//     }
+
+//     return mp;
+// }
+
+// void multimapDisplay(multimap<int, int> mp) {
+//     // Print the keys and value pairs in new line
+//     for(auto it:mp){
+//         cout<<it.first<<" "<<it.second<<endl;
+//     }
+// }
+
+// void multimapErase(multimap<int, int>& mp, int x) {
+//     // If and else condition to erase x from the multimap
+//     if(mp.find(x)!=mp.end()){
+//         mp.erase(x);
+//         cout << "erased " << x<<endl;
+//     }else{
+//          cout << "not found";
+//          cout << endl;
+//     }
+// }
+
+//5.frequency game
+
+//QUESTION
+// Given an integer array arr[] consisting of positive integers, find the largest 
+// element that has the minimum frequency in the array.
+
+//Solution
+
+// class Solution {
+//   public:
+//     int largeAndMinFreq(vector<int>& arr) {
+//         // code here
+//         //isme apn n phele array ki size define ki h
+//         //fr map bnyaa h
+//         //fr array m loop chala kr sbhi elements ki frequency map m store ki h 
+//         //fr minfreq variable declare kiya h or usko integer ki sbse badi value assign krdi h
+        
+//     //phele idr mene int minfreq=0 declare kiya tha but usme problem ye thi ki
+//     //Frequency (it.second)	Condition
+// // 	                  3 	3 < 0 → false
+// // 	                  1	    1 < 0 → false
+// // 	                  2  	2 < 0 → false
+
+// // 	Kisi bhi frequency ke liye condition true nahi hogi. Isliye minfreq 
+// //0 hi rahega, jabki actual minimum frequency 1 hai.
+
+// //fr apn n map m check kiya agr current element ki frequency minfreq s choti h //t
+// //minfreq ko it.second bna do yaani ki current element ki frequency bnado
+
+// //fr ek ans variable liya element find krne k liye jis pr given condition satisfy kregi
+// //loop chlakr  apn check krege kon kon se element ki frequency minfreq k equal h unme s
+// //jo bi max hoga wo return krdege
+
+// //dry run:
+// /*
+// Input: arr = {3, 3, 4, 6, 6, 8}
+
+// Step 1: Create frequency map
+// 3 -> 2
+// 4 -> 1
+// 6 -> 2
+// 8 -> 1
+
+// Step 2: Find minimum frequency
+// minfreq = INT_MAX
+
+// 3 -> freq = 2 -> minfreq = 2
+// 4 -> freq = 1 -> minfreq = 1
+// 6 -> freq = 2 -> minfreq = 1
+// 8 -> freq = 1 -> minfreq = 1
+
+// Minimum frequency = 1
+
+// Step 3: Find largest element with minimum frequency
+// ans = 0
+
+// 3 -> freq = 2 -> skip (not minimum)
+// 4 -> freq = 1 -> ans = max(0, 4) = 4
+// 6 -> freq = 2 -> skip (not minimum)
+// 8 -> freq = 1 -> ans = max(4, 8) = 8
+
+// Output: 8
+
+// Logic:
+// 1. Count frequency of every element using map.
+// 2. Find the minimum frequency.
+// 3. Among elements having minimum frequency,
+//   select the largest element.
+// */
+//         int n=arr.size();
+//         map<int,int> mp;
+//         for(int i=0;i<n;i++){
+//             mp[arr[i]]++;
+//         }
+//         int minfreq=INT_MAX;
+//         for(auto it:mp){
+//             if(it.second<minfreq){
+//                 minfreq=it.second;
+//             }
+//         }
+//         int ans=0;
+//         for(auto it:mp){
+//             if(it.second==minfreq){
+//                 ans=max(ans,it.first);
+//             }
+//         }
+//         return ans;
+        
+//     }
+// };
+
+//6.difference of most frequency and smaller frequency/Highest and Lowest Frequencies
+
+//QUESTION
+
+// Given an array, the task is to find the difference between the highest occurrence
+// and lowest occurrence of any numbers in an array. If only one type of element is 
+// present in the array return 0
+
+//Solution
+
+// class Solution {
+//   public:
+//     int findDiff(vector<int>& arr) {
+//         // code here
+//     //isme apn n array ki sizze input li h
+//     //fr frequency count k map bnaya h or loop chala kr map m frequecy store ki h
+//     //fr 2 variable le liye h maxfreq or minfreq
+//     //maxfreq ko 0 s initilaize kiya h agar aage frequecny kisi ki 0 s badi aaye to apn 
+//     //usko maxfreq m store krde means agar kisi ki freuency maxfreq s jyada aaye to 
+//     //apn maxfreq ko update krdege highest frequency s
+//     //min frequency ko n s initialise kiya because maximum frequency n hi ho skti h
+//     //baaki sb n s choti hi hogi taaki compare kre or agar apn ko kahi bi
+//     //frequency n s choti milti h to apn usko minfreq m update krdenge
+//     //fr last m maxfreq or min freq ka difference return krdiya h
+//         int n=arr.size();
+//         map<int,int>mp;
+//         for(int i=0;i<n;i++){
+//             mp[arr[i]]++;
+//         }
+//         int maxfreq=0;
+//         int minfreq=n;
+//         for(auto it:mp){
+//             if(it.second>maxfreq){
+//                 maxfreq=it.second;
+//             }
+//             if(it.second<minfreq){
+//                 minfreq=it.second;
+//             }
+            
+//         }
+//         return maxfreq-minfreq;
+//     }
+// };
+
+
+//7.contains duplicate on leetcode
+
+//QUESTION
+
+// Given an integer array nums, return true if any value appears at least twice in 
+// the array, and return false if every element is distinct.
+
+
+//Solution
+
+// class Solution {
+// public:
+//     bool containsDuplicate(vector<int>& nums) {
+
+//     //isme apn n phele n bnaya jo ki array  ki size h
+//     //fr map bnaya frequency count krne k liye
+//     //fr loop chalaya or map m frequecny count krtr gye of fr if m condition daal di
+//     //ki agar kisi bi element ki frequency 1 s jyada aaye to true return krna 
+//     //or agar pure loop esa kahi nhi hota ki kisi ki bi frequency 1 s jyada ho to loop end hojyega or loop s bhar aakr false return hojyega
+    
+//       int n=nums.size();
+//       map<int,int>mp;
+//       for(int i=0;i<n;i++){
+//         mp[nums[i]]++;
+//         if(mp[nums[i]]>1){
+//             return true;
+//         }
+//       }
+//       return false;
+//     }
+    
+// };
+
+//8. Move all Negatives to End
+
+//QUESTION
+// Given an unsorted array arr[ ] having both negative and positive integers. 
+// Place all negative elements at the end of the array without changing the order 
+// of positive elements and negative elements.
+
+// Note: Don't return any array, just in-place on the array.
+ 
+ 
+ //Solution
+ 
+//  class Solution {
+//   public:
+//     void segregateElements(vector<int>& arr) {
+//         // code here
+//     //isme apn n phele arr ki size deine ki 
+//     //fr ek temp vector bnaya jisme apn phele positive numbers ko store krege
+//     //fr saare negative numbers ko store krege
+//     //yaani ki apn arr s temp m element daal rahe h
+//     //phele positive daale fr negative daale
+// //fr loop chalakr temp m jo bi elements the unko fr s arr m copy 
+// //krdiya hai
+//         int n=arr.size();
+//         vector<int>temp;
+//         for(int i=0;i<n;i++){
+//             if(arr[i]>=0){
+//                 temp.push_back(arr[i]);
+//             }
+//         }
+//         for(int i=0;i<n;i++){
+//             if(arr[i]<0){
+//                 temp.push_back(arr[i]);
+//             }
+//         }
+//       for(int i=0;i<n;i++){
+//           arr[i]=temp[i];
+//       }
+        
+//     }
+// };
+
+//9.Sum of Highest and Lowest Frequency
+
+//QUESTION
+
+// Given an array of n integers, find the sum of the frequencies of the highest 
+// occurring number and lowest occurring number.
+
+// Example 1:
+// Input: arr = [1, 2, 2, 3, 3, 3]
+
+// Output: 4
+
+// Explanation: The highest frequency is 3 (element 3), and the lowest frequency 
+// is 1 (element 1). Their sum is 3 + 1 = 4.
+
+// class Solution {
+// public:
+//     int sumHighestAndLowestFrequency(vector<int>& nums) {
+//         int n=nums.size();
+//         map<int,int>mp;
+//         for(int i=0;i<n;i++){
+//             mp[nums[i]]++;
+//         }
+//         int maxfreq=0;
+//         int minfreq=n;
+
+//         for(auto it:mp){
+//             if(it.second>maxfreq){
+//                 maxfreq=it.second;
+//             }
+//             if(it.second<minfreq){
+//                 minfreq=it.second;
+//             }
+//         }
+//         return maxfreq+minfreq;
+  
+//     }
+// };
