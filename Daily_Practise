@@ -45,6 +45,7 @@ last = 1 % 10 = 1
 cout << 1
 n = 1 / 10 = 0
 
+
 Now n = 0
 while(n > 0) → false
 
