@@ -401,3 +401,36 @@
   
 //     }
 // };
+
+10.CHECK ARITHMETIC PROGRESSION
+
+//QUESTION
+
+//Given an array arr[] of integers. Write a program to check whether an arithmetic progression can 
+//be formed using all the given elements. 
+
+//solution
+
+//class Solution {
+//  public:
+ //   bool checkIsAP(vector<int> &arr) {
+        // Your code goes here
+        //isme phele array ko sort kiya h
+        //fr 0th or 1st index wale element ka difference nikala h
+        //kyuki AP m two sonsecutive numbers ka difference same hota h
+        //fr loop chalakr if m condition check ki h ki current element or previous
+        //element ka difference d ke equal h ya nhi h or agar nhi h to false return kre
+        //or agar loop ki condition fail hojati h
+        //to loop s bhar aakr true return krdega 
+       // int n=arr.size();
+       // sort(arr.begin(),arr.end());
+       // int d=arr[1]-arr[0];
+       // for(int i=1;i<n;i++){
+       //     if(arr[i]-arr[i-1]!=d){
+       //         return false;
+       //     }
+      //  }
+       // return true;
+        
+   // }
+//};
