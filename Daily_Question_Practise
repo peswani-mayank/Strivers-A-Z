@@ -434,3 +434,35 @@
         
    // }
 //};
+
+//QUESTION: count  disticnct on array
+
+//Given an integer array arr[], return the count of all the distinct elements in an array
+
+//solution
+
+//class Solution {
+ // public:
+   // int countDistinct(vector<int>& arr) {
+        // code here
+        // int n=arr.size();
+        // sort(arr.begin(),arr.end());
+        // int count=1;
+        // for(int i=1;i<n;i++){
+        //     if(arr[i]!=arr[i-1]){
+        //         count++;
+        //     }
+        // }
+        // return count;
+        
+        //METHOD 2
+        
+        // unordered_set<int> s;
+        // for(int i = 0; i < arr.size(); i++) {
+        //     s.insert(arr[i]);
+        // }
+        // return s.size();
+        
+        
+   // }
+//};
