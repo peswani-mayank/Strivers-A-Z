@@ -45,6 +45,7 @@
 //     //bi macimum element hoga usse ek 1 jyada wala likhna h suppoe isme array m 12 macimum element h to 13 leliya
 //     //Reason: Array ka indexing 0 se start hota hai. Isliye maximum index 12 ko 
 //     //access karne ke liye total 13 positions chahiye.
+
 //     for(int i=0;i<n;i++){
 // //Iska meaning hai: array ka har element dekho aur us element ke corresponding 
 // //hash index ki value 1 se increase kar do.
