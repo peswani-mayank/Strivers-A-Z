@@ -1,0 +1,107 @@
+//in this file we are going to cover  basic strings
+
+//string: sequence of characters
+
+//there are two method to create or define string
+
+//method 1 :   
+//String str="Mayank";
+
+//method 2: 
+//String str1=new String("Mayank");
+//strings are immutable: agar ek baar bna gyi to apn koi changes nhi kr skte h 
+
+//there are three method to compare String
+//1.== : ye check krta h ye dono string ki address ko check krta h 
+//string pool m agar dono ki address same h ya kahe ki dono string 
+//ek hi jagah reference kr rhi h to ye tru dega output m else false dega
+//ye content check nhi krta h 
+
+//2.  .equals(): ye content check krta h or ye case sensitive hota h 
+//mtlb isme lowercase or uppercase character ko ye alag alag dekhta h 
+
+//3.  .equalIgnoreCase(): ye content check krta h or isme case ignore hojata h 
+//ye case sensitive nhi hota h isme bs content same hona chahiye 
+
+
+//STRING INPUT: 2 method 
+//1. next: ye word ko input leta h jese hi string m spacce aayega ye ruk jyega 
+
+//2. nextLine(): ye puri string ko input m lega 
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        // String firstname="Mayank";
+        // String lastname=new String("Peswani");
+        // System.out.println(firstname+" "+lastname);
+        
+        // System.out.println(firstname.length());
+        // //if we want to check character at any index of string we will use charAt
+        // System.out.println(firstname.charAt(2)); 
+        
+        //System.out.println(firstname[2]);//this is incorrect method in string
+        // String name1="mayank";
+        // String name2="mayank";
+        // if(name1==name2){
+        //     System.out.println("both equal");
+        // }else{
+        //     System.out.println("not equal");
+            
+        // }
+        
+        // if(name1.equals(name2)){
+        //     System.out.println("both equal");
+        // }else{
+        //     System.out.println("not equal");
+        // }
+        
+        // if(name1.equalsIgnoreCase(name2)){
+        //     System.out.println("both equal");
+        // }else{
+        //     System.out.println("not equal");
+        // }
+        
+        // Scanner sc=new Scanner(System.in);
+        // String str=sc.nextLine();
+        // System.out.println(str);
+        
+        // String str2=sc.next();
+        // System.out.println(st2);
+        
+        
+        //Different methods in STRING 
+        
+        // String str="mayank";
+        // String str1="peswani";
+        
+        // System.out.println(str.length());
+        // System.out.println(str.charAt(0));
+        // System.out.println(str.equals(str1));
+        // System.out.println(str.equalsIgnoreCase(str1));
+        
+        //isEmpty: ye check krta h string ki length zero h ya nhi 
+        //System.out.println(str.isEmpty());
+        
+        //isBlank: isme string ki length ya to zero ho ya fr spaces hone chahiye
+        //System.out.println(str.isBlank());
+        
+        String str2="   Mayank   ";
+        //System.out.println(str2.length());//isme length m spaces bi count hone 
+        // String name= str2.trim();//ye spaces ko remove krta h or ek new string return krta h 
+        // System.out.println(name.length());
+        
+        
+        System.out.println(str2.toUpperCase());
+        System.out.println(str2.toLowerCase());
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+}
