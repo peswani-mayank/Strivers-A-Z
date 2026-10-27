@@ -92,11 +92,13 @@ public class Main{
         // System.out.println(name.length());
         
         
-        System.out.println(str2.toUpperCase());
-        System.out.println(str2.toLowerCase());
+        // System.out.println(str2.toUpperCase());
+        // System.out.println(str2.toLowerCase());
         
+        String str3="My Name is Mayank Peswani";
         
-        
+        System.out.println(str3.substring(3,6));//is method s apn 2 index k bich ki substring find krte hone
+        //2 parameter aayege startindex or endindex isme startindex include rhti h or endindex includde nhi rhti h 
         
         
         
