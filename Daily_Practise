@@ -9,8 +9,8 @@
 //         cout<<last<<endl;
 //         n=n/10; last diigt remove krega
 //     }
-
 // }
+
 
 /*
 DRY RUN:
