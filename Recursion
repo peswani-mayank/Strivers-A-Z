@@ -27,22 +27,154 @@
 //Golden rule: Har recursive function mein check karo — base case kya hai, 
 //aur recursive call problem ko kaise chhota kar rahi hai?
 
-#include<bits/stdc++.h>
-using namespace std;
-int cnt=0;
-void print(){
-    if(cnt==3){
-        return;
-    }
-    cnt++;
-    cout<<cnt<<" ";
-    print();
-}
-int main(){
-    print();
-}
+// #include<bits/stdc++.h>
+// using namespace std;
+// int cnt=0;
+// void print(){
+//     if(cnt==3){
+//         return;
+//     }
+//     cnt++;
+//     cout<<cnt<<" ";
+//     print();
+// }
+// int main(){
+//     print();
+// }
 
 //Recursion Tree: Recursion Tree ek diagram hota hai jo dikhata hai ki recursive 
 //function kitni baar call hota hai aur kaun-si call se kaun-si next call nikalti hai.
 
+//Basic Question Practise:
+
+//1.Print name 5 times by recursion 
+
+//method 1: 
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void print(int i,int n){
+//     if(i>n){
+//         return;
+//     }
+//     cout<<"Mayank"<<endl;
+//     print(i+1,n);
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     print(1,n);
+// }
+
+//time complexity: o(n)
+//space complexity: o(n)
+
+//method 2
+// #include<bits/stdc++.h>
+// using namespace std;
+// int cnt=0;
+// void print(){
+//     if(cnt==5){
+//         return;
+//     }
+//     cnt++;
+//     cout<<"Mayank"<<endl;
+//     print();
+    
+// }
+// int main(){
+//     print();
+// }
+
+
+//2.print linearly from 1 to n 
+// #include<bits/stdc++.h>
+// using namespace std;
+// void print(int i, int n){
+//     if(i>n){
+//         return;
+//     }
+//     cout<<i<<" ";
+//     print(i+1,n);
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     print(1,n);
+// }
+
+//2.print linearly from n to 1;
+// #include<bits/stdc++.h>
+// using namespace std;
+// void print(int i, int n){
+//     if(i<1){
+//         return;
+//     }
+//     cout<<i<<" ";
+//     print(i-1,n);
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     print(n,n);
+// }
+
+//i — current number jo print hoga.
+//n — original number, jo har recursive call mein same rahega.
+//if (i < 1) — base condition, jo recursion ko rokegi.
+//print(i - 1, n) — recursive call, jo i ko decrease karegi.
+
+//DRY RUN: 
+
+// Call 1
+// print(5, 5)
+// 5 < 1 → False
+// 5 print hoga.
+// Next call: print(4, 5)
+
+// Call 2
+// print(4, 5)
+// 4 < 1 → False
+// 4 print hoga.
+// Next call: print(3, 5)
+
+// Call 3
+// print(3, 5)
+// 3 < 1 → False
+// 3 print hoga.
+// Next call: print(2, 5)
+
+// Call 4
+// print(2, 5)
+// 2 < 1 → False
+// 2 print hoga.
+// Next call: print(1, 5)
+
+// Call 5
+// print(1, 5)
+// 1 < 1 → False
+// 1 print hoga.
+// Next call: print(0, 5)
+
+// Call 6
+// print(0, 5)
+// 0 < 1 → True
+// return execute hoga. Function ruk jayega aur 0 print nahi hoga.
+
+// 3. Recursion tree
+// print(5, 5)
+// Print 5
+// print(4, 5)
+// Print 4
+// print(3, 5)
+// Print 3
+// print(2, 5)
+// Print 2
+// print(1, 5)
+// Print 1
+// print(0, 5)
+// Base case → return
 
