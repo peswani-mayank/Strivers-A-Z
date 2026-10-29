@@ -43,7 +43,7 @@
 //         cin>>arr[i];
 //     }
 //     int hash[13]={0};//idr apn hash m 13 ki isliye likha idr apn ko array m jo 
-//     //bi macimum element hoga usse ek 1 jyada wala likhna h suppoe isme array m 12 macimum element h to 13 leliya
+//     //bi macimum element hoga usse ek 1 jyada wala likhna h suppoe isme array m 12 maximum element h to 13 leliya
 //     //Reason: Array ka indexing 0 se start hota hai. Isliye maximum index 12 ko 
 //     //access karne ke liye total 13 positions chahiye.
 
@@ -303,7 +303,7 @@
 //   public:
 //     int findSum(vector<int>& arr) {
 //         // code here
-//     //isme apn n array ki sizze input li h
+//     //isme apn n array ki size input li h
 //     //fr frequency count k map bnaya h or loop chala kr map m frequecy store ki h
 //     //fr 2 variable le liye h maxfreq or minfreq
 //     //maxfreq ko 0 s initilaize kiya h agar aage frequecny kisi ki 0 s badi aaye to apn 
