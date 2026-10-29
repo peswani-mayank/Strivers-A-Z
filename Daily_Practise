@@ -1918,4 +1918,26 @@ int main(){
 // };
 
 
+//in this file we are going to cover recursion
+
+//recursion: jab koi function apne aap ko call karta hai, use recursion kehte hain.
+
+//Recursion ke 2 most important parts
+
+//1. Base Case: Ye condition batati hai ki recursion ko kab rokna hai.
+
+//Example:
+
+//if (n == 0) {
+//     return;
+// }
+
+//Agar base case nahi hoga, to function baar-baar call hota rahega, jab tak stack overflow na ho jaye.
+
+
+//2. Recursive Call: Ye woh statement hai jo function ko dobara call karti hai.
+
+//print(n - 1);
+
+//Har call mein problem ko chhota karna chahiye, taaki eventually base case tak pahunch sakein.
 
