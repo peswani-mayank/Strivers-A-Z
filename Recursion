@@ -1,0 +1,48 @@
+//in this file we are going to cover recursion
+
+//recursion: jab koi function apne aap ko call karta hai, use recursion kehte hain.
+//or we can when a function calls itself until a specified condition is met 
+
+//Recursion ke 2 most important parts
+
+//1. Base Case: Ye condition batati hai ki recursion ko kab rokna hai.
+
+//Example:
+
+//if (n == 0) {
+//     return;
+// }
+
+//Agar base case nahi hoga, to function baar-baar call hota rahega, jab tak stack overflow na ho jaye.
+//or stack overflow hoga to segmentation fault aayega
+
+
+
+//2. Recursive Call: Ye woh statement hai jo function ko dobara call karti hai.
+
+//print(n - 1);
+
+//Har call mein problem ko chhota karna chahiye, taaki eventually base case tak pahunch sakein.
+
+//Golden rule: Har recursive function mein check karo — base case kya hai, 
+//aur recursive call problem ko kaise chhota kar rahi hai?
+
+#include<bits/stdc++.h>
+using namespace std;
+int cnt=0;
+void print(){
+    if(cnt==3){
+        return;
+    }
+    cnt++;
+    cout<<cnt<<" ";
+    print();
+}
+int main(){
+    print();
+}
+
+//Recursion Tree: Recursion Tree ek diagram hota hai jo dikhata hai ki recursive 
+//function kitni baar call hota hai aur kaun-si call se kaun-si next call nikalti hai.
+
+
