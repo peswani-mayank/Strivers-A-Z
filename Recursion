@@ -105,6 +105,59 @@
 //     print(1,n);
 // }
 
+//method 2 
+//#include<bits/stdc++.h>
+// using namespace std;
+// void print(int i, int n){
+//     if(i<1){
+//         return;
+//     }
+    
+//     print(i-1,n);
+//     cout<<i<<" ";
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     print(n,n);
+// }
+
+// Calling phase — function calls kaise hongi?
+// Input: 5
+// print(5, 5)
+// i < 1 is false → call print(4, 5)
+
+// print(4, 5)
+// i < 1 is false → call print(3, 5)
+
+// print(3, 5)
+// i < 1 is false → call print(2, 5)
+
+// print(2, 5)
+// i < 1 is false → call print(1, 5)
+
+// print(1, 5)
+// i < 1 is false → call print(0, 5)
+
+// print(0, 5)
+// i < 1 is true → return
+
+
+// Jab print(0, 5) par pahunchta hai, i < 1 true ho jaata hai aur function return karta hai.
+
+// Abhi tak koi number print nahi hua, kyunki har call mein cout se pehle recursive call execute hoti hai.
+
+// Returning phase — printing kaise hogi?
+// Ab function calls reverse order mein complete hongi.
+// Returning function	Kya execute hoga?	Output ab tak
+// print(0,5)	              return	      Nothing
+// print(1,5)	             cout << 1	        1
+// print(2,5)	             cout << 2	       1 2
+// print(3,5)	             cout << 3	       1 2 3
+// print(4,5)	             cout << 4	       1 2 3 4
+// print(5,5)	             cout << 5	       1 2 3 4 5
+
 //2.print linearly from n to 1;
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -177,4 +230,5 @@
 // Print 1
 // print(0, 5)
 // Base case → return
+
 
