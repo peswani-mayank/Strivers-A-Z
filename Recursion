@@ -105,7 +105,7 @@
 //     print(1,n);
 // }
 
-//method 2 
+//method 2  (by backtracking)
 //#include<bits/stdc++.h>
 // using namespace std;
 // void print(int i, int n){
@@ -232,3 +232,20 @@
 // Base case → return
 
 
+//4. print n to 1(by backtracking)
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int i,int n){
+    if(i>n){
+        return;
+    }
+    print(i+1,n);
+    cout<<i<<" ";
+    
+}
+int main(){
+    int n;
+    cin>>n;
+    print(1,n);
+}
