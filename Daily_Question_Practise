@@ -532,14 +532,104 @@ class Solution {
 // };
 
 
-//14: Sum of First N Numbers
+//14: first and last in sorted on gfg
 
 //QUESTION:
 
-//Given an integer N, return the sum of first N natural numbers. Try to solve this using recursion.
-//Example 1:
-//Input : N = 4
-//Output : 10
-//Explanation : first four natural numbers are 1, 2, 3, 4.
-//Sum is 1 + 2 + 3 + 4 => 10.
+//Given a sorted array arr[] with possibly some duplicates, find the first and last occurrences of an element x 
+//in the given array.
+//Note: If the number x is not found in the array then return both the indices as -1.
+
+//SOLUTION:
+
+class Solution {
+  public:
+    vector<int> find(vector<int>& arr, int x) {
+        // code here
+        
+        //isme phele array ki size define ki h fr 2 variables liye h
+        //first wala first occurrence btayega or last wala last occurrence btayega
+        //or in dono variables ko -1 s start kiya iska mtlb h ki starting m abhi 
+        //target element mila nhi h 
+        //fr loop chalaya h or check krege ki array ka element target element k equal 
+        //h ya nhi h or agar hai to fr wo check krege ki jo first wala variable h wo -1
+        //hai ya nhi h agar h to fr first ko us element k index number s update krdega 
+        //or last wale ko bi update krdega 
+        
+        //or fr first or last dono return krdega
+        
+        //method 1
+        
+        // int n=arr.size();
+        // int first=-1;
+        // int last=-1;
+        // for(int i=0;i<n;i++){
+        //     if(arr[i]==x){
+        //         if(first==-1){
+        //             first=i;
+        //         }
+        //         last=i;
+                
+        //     }
+        // }
+        // return {first,last};
+        
+        
+        //method 2;
+        
+        // Sabse pehle humne array ka size n nikala aur do variables first aur last banaye, 
+        // jinhe initially -1 se initialize kiya. Iska matlab hai ki abhi tak target element 
+        // x ka occurrence nahi mila hai. Uske baad humne low = 0 aur high = n-1 set kiya, jo array 
+        // ki searching range ko represent karte hain. Phir while(low <= high) loop lagaya aur 
+        // mid = low + (high-low)/2 se middle index calculate kiya. Agar arr[mid] == x hota hai, 
+        // toh hum first = mid update karte hain aur high = mid-1 kar dete hain, taaki target ka pehla 
+        // occurrence dhoondhne ke liye left side mein search kar sakein. Agar middle element x se bada hai, 
+        // toh high = mid-1 karte hain, aur agar chhota hai, toh low = mid+1 karte hain.
+
+        // First occurrence milne ke baad hum low = 0 aur high = n-1 dobara set karte hain, 
+        // taaki second Binary Search poore array se start ho. Ab last occurrence find karne ke 
+        // liye agar arr[mid] == x hota hai, toh last = mid update karte hain aur low = mid+1 kar dete hain, 
+        // taaki right side mein search karke target ka last occurrence mil sake. Agar target nahi milta, toh 
+        // first aur last ki values -1 hi rehti hain. Finally, hum return {first, last}; se dono indices return 
+        // kar dete hain.
+        
+        
+        //int n=arr.size();
+        //int first=-1;
+        //int last=-1;
+        
+        //int low=0;
+        //int high=n-1;
+        //while(low<=high){
+         //   int mid=low+(high-low)/2;
+          //  if(arr[mid]==x){
+          //      first=mid;
+           //     high=mid-1;
+          //  }else if(arr[mid]>x){
+          //      high=mid-1;
+           // }else if(arr[mid]<x){
+           //     low=mid+1;
+         //   }
+       // }
+      //  int low1=0;
+      //  int high1=n-1;
+       //  while(low1<=high1){
+       //     int mid=low1+(high1-low1)/2;
+       //     if(arr[mid]==x){
+        //        last=mid;
+        //        low1=mid+1;
+        //    }else if(arr[mid]>x){
+        //        high1=mid-1;
+         //   }else if(arr[mid]<x){
+         //       low1=mid+1;
+        //    }
+      //  }
+      //  return{first,last};
+        
+   // }
+//};
+
+//Time complexity of method 1: o(n)
+//Time complexity of method 2: o(log n)
+
 
