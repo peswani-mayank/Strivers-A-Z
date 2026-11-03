@@ -5,7 +5,6 @@
 
 //Recursion ke 2 most important parts
 
-
 //1. Base Case: Ye condition batati hai ki recursion ko kab rokna hai.
 
 //Example:
@@ -20,7 +19,6 @@
 
 
 //2. Recursive Call: Ye woh statement hai jo function ko dobara call karti hai.
-
 
 //print(n - 1);
 
@@ -48,7 +46,6 @@
 //function kitni baar call hota hai aur kaun-si call se kaun-si next call nikalti hai.
 
 //Basic Question Practise:
-
 
 //1.Print name 5 times by recursion 
 
@@ -288,17 +285,45 @@
 // }
 
 //factorial of n 
-#include<bits/stdc++.h>
-using namespace std;
-int factorial(int n){
-    if(n==0 || n==1){
-        return 1;
-    }
-    return n*factorial(n-1);
+// #include<bits/stdc++.h>
+// using namespace std;
+// int factorial(int n){
+//     if(n==0 || n==1){
+//         return 1;
+//     }
+//     return n*factorial(n-1);
     
-}
-int main(){
-    int n;
-    cin>>n;
-    cout<<factorial(n);
-}
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     cout<<factorial(n);
+// }
+
+
+// //How to reverse an array using Recursion
+
+//in this we have use two pointers
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void ReverseArray(int arr[],int left, int right){
+//     if(left>=right){
+//         return;
+//     }
+//     swap(arr[left],arr[right]);
+//     ReverseArray(arr,left+1,right-1);
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     ReverseArray(arr,0,n-1);
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
