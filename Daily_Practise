@@ -2068,3 +2068,30 @@ class Solution {
 // };
 
 //Timecomplexity of binary search is o(logn)
+
+// //How to reverse an array using Recursion
+
+//in this we have use two pointers
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void ReverseArray(int arr[],int left, int right){
+//     if(left>=right){
+//         return;
+//     }
+//     swap(arr[left],arr[right]);
+//     ReverseArray(arr,left+1,right-1);
+    
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     ReverseArray(arr,0,n-1);
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
