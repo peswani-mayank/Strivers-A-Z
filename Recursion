@@ -358,29 +358,53 @@
 
 
 //check is a string is palindrome or not using recursion 
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool PalindromCheck(string s,int i){
+//     if(i>=s.size()/2){
+//         return true;
+//     }
+    
+//     if(s[i]!=s[s.size()-i-1]){
+//         return false;
+//     }
+//     return PalindromCheck(s,i+1);
+    
+// }
+// int main(){
+//     string s;
+//     cin>>s;
+    
+//     //PalindromCheck(s,0);
+//     if(PalindromCheck(s,0)){
+//         cout<<"Palindrome";
+//     }else{
+//         cout<<"Not Palindrome";
+        
+//     }
+// }
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
-bool PalindromCheck(string s,int i){
-    if(i>=s.size()/2){
-        return true;
-    }
-    
-    if(s[i]!=s[s.size()-i-1]){
-        return false;
-    }
-    return PalindromCheck(s,i+1);
-    
-}
 int main(){
-    string s;
-    cin>>s;
-    
-    //PalindromCheck(s,0);
-    if(PalindromCheck(s,0)){
-        cout<<"Palindrome";
+    int n;
+    cin>>n;
+    if(n<=1){
+        cout<<"not prime";
+        return 0;
+    }
+    bool isPrime=true;
+    for(int i=2;i<n;i++){
+        if(n%i==0){
+            isPrime=false;
+            break;
+        }
+    }
+    if(isPrime){
+        cout<<"Prime";
     }else{
-        cout<<"Not Palindrome";
-        
+        cout<<"not prime";
     }
 }
-
