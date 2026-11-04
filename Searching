@@ -28,6 +28,57 @@
 //or usme jo element ko ek posiiton piche shift krdiya h ith position pr hoga wo i-1 th position pr shift hojyega
 //or fr jb loop khatam hojyega to fr s jo first element temp m store kiya tha usko n-1 th index pr update krdiya means usko last m shift krdiyaa h or fr array ko print krdiya h 
 
+//arr[n]=[1,2,3,4,5] input
+//arr[n]=[2,3,4,5,1] output
 
-
+// arr[0]=1=temp m store krdiya h fr i=1 s start krege loop ko 
+ 
+//iteration 1:
+//i=1 
+//arr[1]=2 
+//arr[i-1]=arr[i]-->>arr[1-1]=arr[1]-->>arr[0]=arr[1]-->> arr[0]=22
+//and for remaining iteration will be same as iteration 1 and then in the last we put the element of index 1
 //time complexity: o(n);
+
+
+//2.right rotate the array by one place
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int temp=arr[n-1];
+    
+    
+//     for(int i=n-1;i>0;i--){
+//         arr[i]=arr[i-1];
+//     }
+//     arr[0]=temp;
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+// First, store the last element:
+
+// temp = 5
+
+// Now shift elements right:
+// Operation	Array
+// Initial	1 2 3 4 5
+// arr[4] = arr[3]	1 2 3 4 4
+// arr[3] = arr[2]	1 2 3 3 4
+// arr[2] = arr[1]	1 2 2 3 4
+// arr[1] = arr[0]	1 1 2 3 4
+
+//Finally:
+//arr[0]=temp;
+//output: 5 1 2 3 4
+//time complexity: o(n);
+//space complexity: 
+//extra space using in this problem : o(1);
+//space used to solve this array: o(n)
