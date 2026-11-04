@@ -1,0 +1,33 @@
+// in this file we are going to cover searching techniques/ methods 
+
+//1.Left rotate the array by one place
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+    
+//     int temp=arr[0];
+//     for(int i=1;i<n;i++){
+//         arr[i-1]=arr[i];
+//     }
+//     arr[n-1]=temp;
+    
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+//isme apn n left rotate krna h means left s ek element utha kr usko last m rkhna h or baaki sbhi element ko left side ek positiion shift krna h 
+//isme apn n jo first element tha 0th index pr usko ek baar temp variable m store krdiya h or fr for loop chalaya h 1th index s lekar n-1 tk
+//or usme jo element ko ek posiiton piche shift krdiya h ith position pr hoga wo i-1 th position pr shift hojyega
+//or fr jb loop khatam hojyega to fr s jo first element temp m store kiya tha usko n-1 th index pr update krdiya means usko last m shift krdiyaa h or fr array ko print krdiya h 
+
+
+
+//time complexity: o(n);
