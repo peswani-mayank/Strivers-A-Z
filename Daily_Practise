@@ -17,7 +17,6 @@ DRY RUN:
 
 Input:
 n = 12345
-
 while(n > 0)
 
 n = 12345
