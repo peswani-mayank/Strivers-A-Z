@@ -16,7 +16,7 @@
 //     int arr[]={13,46,24,52,20,9};
 //     int n=6;
 //     for(int i=0;i<n-1;i++){//outer loop decided Where should the next smallest element go?
-//         int min=i; //idr apn n jo bi ith posiiton pr element hga usko minimum assume krliyaa h
+//         int min=i; //idr apn n jo bi ith position pr element hga usko minimum assume krliyaa h
 //         for(int j=i+1;j<n;j++){//inner loop This searches the remaining unsorted elements.
 //         if(arr[j]<arr[min]){
 //             min=j;
