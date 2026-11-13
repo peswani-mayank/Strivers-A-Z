@@ -7,7 +7,7 @@
 //     while(n>0){
 //         int last=n%10; ye last digit ko extract krega 
 //         cout<<last<<endl;
-//         n=n/10; last diigt remove krega
+//         n=n/10; last digit remove krega
 //     }
 // }
 
