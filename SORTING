@@ -5,6 +5,7 @@
 // //2.quick sorting
 // //3. insertion sorting
 
+
 // //1.selection sorting: in this we select the minimum number in array and place it in the first position 
 // //or jo first position pr element hoga us se swap krdenge ese hi sbhi elements k sath krege
 // // 1. Select a position
