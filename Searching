@@ -33,7 +33,7 @@
 //     }
     
 // }
-
+//time complexity: o(logn)
 
 // in this file we are going to cover searching techniques/ methods 
 // //1.Left rotate the array by one place
