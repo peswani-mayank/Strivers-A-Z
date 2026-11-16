@@ -1,4 +1,3 @@
-
 //IN THIS FILE WE WILL COVER HASHING 
 //HASHING: Hashing is a technique used to store, retrieve, and search data efficiently 
 //by mapping a key to an index or location in a data structure using a hash function.
@@ -168,7 +167,8 @@
 //     }
 // }
 
-//as we see there is one problem in array that it can store only 10 raise to power 7 elements if it is declare in int amin
+//as we see there is one problem in array that it can store only 10 raise to power 6 elements if it is declare in int main and if it is declare globally 
+//then it can store only 10 raise to power 7
 //suppose if there are more that it we cannot be able hash by using array
 
 //so in c++ one concept comes that is stl(map, unordered_map) and in java there is collections(HashMap)
@@ -285,8 +285,36 @@
         
 //     }
 //     cout << ans << endl;
-    
 // }
+
+//time complexity: o(n square)
+//method 2:
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    map<int,int>mp;
+    for(int i=0;i<n;i++){
+        mp[arr[i]]++;
+    }
+    int ans=-1;
+    int maxfreq=0;
+    for(auto it:mp){
+        if(it.second>maxfreq){
+            maxfreq=it.second;
+            ans=it.first;
+        }else if(it.second==maxfreq && it.first<ans){
+            ans=it.first;
+        }
+    }
+    cout<<ans;
+}
+//time complexity: o(nlogn)
 
 
 //Sum of Highest and Lowest Frequency
