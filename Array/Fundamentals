@@ -1,1 +1,48 @@
-//Fundamentals of array 
+//1. linear search 
+//Given an array of integers nums and an integer target, find the smallest index (0 based indexing) where the target 
+//appears in the array. If the target is not found in the array, return -1
+//Example 1:
+//Input: nums = [2, 3, 4, 5, 3], target = 3
+//Output: 1
+//Explanation:
+//The first occurence of 3 in nums is at index 1
+
+//Solution:
+class Solution {
+public:
+    int linearSearch(vector<int>& nums, int target) {
+        //your code goes here
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            if(nums[i]==target){
+                return i;
+                break;
+            }
+        }
+        return -1;
+    }
+};
+
+//2. largest element
+
+//Given an array of integers nums, return the value of the largest element in the array
+//Example 1:
+//Input: nums = [3, 3, 6, 1]
+//Output: 6
+//Explanation: The largest element in array is 6
+
+//Solution:
+class Solution {
+public:
+    int largestElement(vector<int>& nums) {
+        int n=nums.size();
+        int max=nums[0];
+        for(int i=0;i<n;i++){
+            if(nums[i]>max){
+                max=nums[i];
+            }
+        }
+        return max;
+
+    }
+};
