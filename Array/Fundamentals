@@ -201,3 +201,46 @@ hain using nums[i+k] = nums[i]; yahan backwards traversal isliye karte hain taak
 Finally, for(int i=0; i<k; i++) loop se temp ke elements ko nums[i] = temp[i] ki help se array ke starting positions par 
 insert kar dete hain. For example, {10,20,30,40,50} ko 2 positions right rotate karne par final array {40,50,10,20,30} 
 milega. Is approach ki time complexity O(n) aur auxiliary space complexity O(k) hai.
+
+
+//7. Maximum Consecutive Ones
+//Given a binary array nums, return the maximum number of consecutive 1s in the array.
+A binary array is an array that contains only 0s and 1s.
+Example 1:
+Input: nums = [1, 1, 0, 0, 1, 1, 1, 0]
+Output: 3
+Explanation:
+The maximum consecutive 1s are present from index 4 to index 6, amounting to 3 1s
+
+//solution:
+
+
+class Solution {
+public:
+    int findMaxConsecutiveOnes(vector<int>& nums) {
+        int n=nums.size();
+        int max1=0;
+        int count=0;
+        for(int i=0;i<n;i++){
+            if(nums[i]==1){
+                count++;
+                max1=max(max1,count);
+            }else{
+                count=0;
+            }
+        }
+        return max1;
+        
+    }
+};
+
+//Maximum Consecutive Ones problem mein humein array mein continuously aane wale 1s ki maximum count find karni 
+hoti hai. Sabse pehle n = nums.size() se array ka size calculate karte hain, phir max1 = 0 aur count = 0 initialize 
+karte hain, jahan count current consecutive ones ko count karega aur max1 ab tak ki maximum consecutive ones ki count 
+store karega. Uske baad for(int i=0; i<n; i++) loop se array ke har element ko traverse karte hain. Agar nums[i] == 1 
+hota hai, toh count++ karke consecutive ones ki count increase karte hain aur max1 = max(max1, count) se maximum count 
+update karte hain. Agar element 1 nahi hota, toh count = 0 kar dete hain, kyunki consecutive sequence break ho gayi hai 
+aur next sequence ki counting zero se start hogi. Finally, return max1 se maximum consecutive ones ki count return kar 
+dete hain. For example, agar array {1,1,0,1,1,1,0,1} hai, toh consecutive ones ke groups ki counts 2, 3 aur 1 hain, 
+isliye output 3 hoga. Is approach ki Time Complexity O(n) aur Auxiliary Space Complexity O(1) hai, kyunki hum array 
+ko sirf ek baar traverse karte hain aur extra space use nahi karte.
