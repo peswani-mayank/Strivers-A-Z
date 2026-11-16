@@ -2300,3 +2300,251 @@ public:
     
 // }
 //time complexity: o(logn)
+
+
+//1. linear search 
+//Given an array of integers nums and an integer target, find the smallest index (0 based indexing) where the target 
+//appears in the array. If the target is not found in the array, return -1
+//Example 1:
+//Input: nums = [2, 3, 4, 5, 3], target = 3
+//Output: 1
+//Explanation:
+//The first occurence of 3 in nums is at index 1
+
+//Solution:
+class Solution {
+public:
+    int linearSearch(vector<int>& nums, int target) {
+        //your code goes here
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            if(nums[i]==target){
+                return i;
+                break;
+            }
+        }
+        return -1;
+    }
+};
+
+//2. largest element
+
+//Given an array of integers nums, return the value of the largest element in the array
+//Example 1:
+//Input: nums = [3, 3, 6, 1]
+//Output: 6
+//Explanation: The largest element in array is 6
+
+//Solution:
+class Solution {
+public:
+    int largestElement(vector<int>& nums) {
+        int n=nums.size();
+        int max=nums[0];
+        for(int i=0;i<n;i++){
+            if(nums[i]>max){
+                max=nums[i];
+            }
+        }
+        return max;
+
+    }
+};
+
+//3.second largest elment:
+//Given an array of integers nums, return the second-largest element in the array. 
+//If the second-largest element does not exist, return -1.
+//Example 1:
+//Input: nums = [8, 8, 7, 6, 5]
+//Output: 7
+//Explanation:
+//The largest value in nums is 8, the second largest is 7
+
+//Solution:
+class Solution {
+public:
+    int secondLargestElement(vector<int>& nums) {
+        //your code goes here
+        int largest=INT_MIN;
+        int secondLargestElement=INT_MIN;
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            if(nums[i]>largest){
+                secondLargestElement=largest;
+                largest=nums[i];
+            }else if(nums[i]<largest && nums[i]>secondLargestElement){
+                secondLargestElement=nums[i];
+            }
+        }
+        if(secondLargestElement==INT_MIN){
+            return -1;
+        }
+        return secondLargestElement;
+      
+    }
+};
+
+//4. left rotate array by one:
+
+//Given an integer array nums, rotate the array to the left by one.
+Note: There is no need to return anything, just modify the given array.
+Example 1:
+Input: nums = [1, 2, 3, 4, 5]
+Output: [2, 3, 4, 5, 1]
+Explanation:
+Initially, nums = [1, 2, 3, 4, 5]
+Rotating once to left -> nums = [2, 3, 4, 5, 1]
+
+
+//solution:
+class Solution {
+public:
+    void rotateArrayByOne(vector<int>& nums) {
+        int n=nums.size();
+        int temp=nums[0];
+        for(int i=1;i<n;i++){
+            nums[i-1]=nums[i];
+        }
+        nums[n-1]=temp;
+        
+    }
+};
+// Left rotation of an array by one place ka matlab hai har element ko ek position left shift karna aur jo first 
+element beginning se bahar jaata hai, usko array ke last position par place karna. Sabse pehle n = nums.size() 
+se array ka size calculate karte hain, phir int temp = nums[0] se first element ko temporary variable mein store 
+karte hain, kyunki shifting ke time first element overwrite ho jayega. Uske baad for(int i=1; i<n; i++) loop se 
+remaining elements ko ek position left shift karte hain using nums[i-1] = nums[i], jisse second element first position 
+par, third element second position par aur aise hi saare elements left shift ho jaate hain. Finally, nums[n-1] = temp 
+se previously stored first element ko array ke last position par place kar dete hain. For example, {10,20,30,40,50} ko 
+left rotate by one karne par final array {20,30,40,50,10} milega. Is approach ki Time Complexity O(n) aur Auxiliary Space 
+Complexity O(1) hai, kyunki hum sirf ek temporary variable use kar rahe hain.
+
+//5.right rotate by one :
+
+#include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int temp=arr[n-1];
+//     for(int i=n-1;i>0;i--){
+//         arr[i]=arr[i-1];
+//     }
+//     arr[0]=temp;
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+//6.  Left Rotate Array by K Places
+
+Given an integer array nums and a non-negative integer k, rotate the array to the left by k steps.
+
+Example 1:
+Input: nums = [1, 2, 3, 4, 5, 6], k = 2
+
+Output: nums = [3, 4, 5, 6, 1, 2]
+
+Explanation:
+
+rotate 1 step to the left: [2, 3, 4, 5, 6, 1]
+
+rotate 2 steps to the left: [3, 4, 5, 6, 1, 2]
+
+//solution:
+class Solution {
+public:
+    void rotateArray(vector<int>& nums, int k) {
+        int n=nums.size();
+        k=k%n;
+        vector<int>temp;
+        for(int i=0;i<k;i++){
+            temp.push_back(nums[i]);
+        }
+        for(int i=k;i<n;i++){
+            nums[i-k]=nums[i];
+        }
+        for(int i=0;i<k;i++){
+            nums[n-k+i]=temp[i];
+        }
+    }
+};
+
+//7.  right Rotate Array by K Places
+
+//solution:
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int n=nums.size();
+        vector<int> temp;
+        k=k%n;
+        for (int i=n-k;i<n;i++) {
+            temp.push_back(nums[i]);
+        }
+        for (int i=n-k-1;i>=0;i--) {
+            nums[i+k]=nums[i];
+        }
+        for (int i=0;i<k;i++) {
+            nums[i]=temp[i];
+        }
+
+    }
+};
+
+// Right rotation of an array by K places ka matlab hai har element ko K positions right shift karna aur jo 
+elements end se bahar jaate hain unhe beginning mein lana. Sabse pehle n = nums.size() se array ka size calculate 
+karte hain aur k = k % n se K ko normalize karte hain, taaki agar K array size se bada ho toh unnecessary rotations 
+avoid ho sakein. Uske baad for(int i=n-k; i<n; i++) loop se last K elements ko temp vector mein store karte hain, 
+kyunki inhe beginning mein lana hai. Next, for(int i=n-k-1; i>=0; i--) loop se remaining elements ko right shift karte 
+hain using nums[i+k] = nums[i]; yahan backwards traversal isliye karte hain taaki original elements overwrite na hon. 
+Finally, for(int i=0; i<k; i++) loop se temp ke elements ko nums[i] = temp[i] ki help se array ke starting positions par 
+insert kar dete hain. For example, {10,20,30,40,50} ko 2 positions right rotate karne par final array {40,50,10,20,30} 
+milega. Is approach ki time complexity O(n) aur auxiliary space complexity O(k) hai.
+
+
+//7. Maximum Consecutive Ones
+//Given a binary array nums, return the maximum number of consecutive 1s in the array.
+A binary array is an array that contains only 0s and 1s.
+Example 1:
+Input: nums = [1, 1, 0, 0, 1, 1, 1, 0]
+Output: 3
+Explanation:
+The maximum consecutive 1s are present from index 4 to index 6, amounting to 3 1s
+
+//solution:
+
+
+class Solution {
+public:
+    int findMaxConsecutiveOnes(vector<int>& nums) {
+        int n=nums.size();
+        int max1=0;
+        int count=0;
+        for(int i=0;i<n;i++){
+            if(nums[i]==1){
+                count++;
+                max1=max(max1,count);
+            }else{
+                count=0;
+            }
+        }
+        return max1;
+        
+    }
+};
+
+//Maximum Consecutive Ones problem mein humein array mein continuously aane wale 1s ki maximum count find karni 
+hoti hai. Sabse pehle n = nums.size() se array ka size calculate karte hain, phir max1 = 0 aur count = 0 initialize 
+karte hain, jahan count current consecutive ones ko count karega aur max1 ab tak ki maximum consecutive ones ki count 
+store karega. Uske baad for(int i=0; i<n; i++) loop se array ke har element ko traverse karte hain. Agar nums[i] == 1 
+hota hai, toh count++ karke consecutive ones ki count increase karte hain aur max1 = max(max1, count) se maximum count 
+update karte hain. Agar element 1 nahi hota, toh count = 0 kar dete hain, kyunki consecutive sequence break ho gayi hai 
+aur next sequence ki counting zero se start hogi. Finally, return max1 se maximum consecutive ones ki count return kar 
+dete hain. For example, agar array {1,1,0,1,1,1,0,1} hai, toh consecutive ones ke groups ki counts 2, 3 aur 1 hain, 
+isliye output 3 hoga. Is approach ki Time Complexity O(n) aur Auxiliary Space Complexity O(1) hai, kyunki hum array 
+ko sirf ek baar traverse karte hain aur extra space use nahi karte.
