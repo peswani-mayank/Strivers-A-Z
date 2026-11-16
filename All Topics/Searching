@@ -1,3 +1,38 @@
+//binary search :
+// //Binary Search ek searching algorithm hai jo sorted array/vector mein kisi element ko 
+// //efficiently find karta hai.
+// //Time Complexity:O(log n)
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int target;
+//     cin>>target;
+//     int low=0;
+//     int high=n-1;
+//     bool found=false;
+//     while(low<=high){
+//         int mid=low+(high-low)/2;
+//         if(arr[mid]==target){
+//             cout<<arr[mid];
+//             found=true;
+//             break;
+//         }else if(arr[mid]>target){
+//             high=mid-1;
+//         }else{
+//             low=mid+1;
+//         }
+//     }
+//     if(!found){
+//         cout<<-1;
+//     }
+    
+// }
 // in this file we are going to cover searching techniques/ methods 
 // //1.Left rotate the array by one place
 
