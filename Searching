@@ -2,8 +2,6 @@
 // //Linear Search ek searching algorithm hai jisme hum array ke har element ko one 
 // //by one check karte hain jab tak target mil nahi jata ya array khatam nahi ho jata.
 // //Unlike Binary Search, array sorted hona compulsory nahi hai.
-
-
 // #include<bits/stdc++.h>
 // using namespace std;
 // int main(){
@@ -69,8 +67,6 @@
 
 // in this file we are going to cover searching techniques/ methods 
 // //1.Left rotate the array by one place
-
-
 // // #include<bits/stdc++.h>
 // // using namespace std;
 // // int main(){
