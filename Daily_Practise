@@ -2232,3 +2232,71 @@ public:
 
 // Time Complexity: O(n)
 // Auxiliary Space: O(d)
+
+
+//linear search:
+// //Linear Search ek searching algorithm hai jisme hum array ke har element ko one 
+// //by one check karte hain jab tak target mil nahi jata ya array khatam nahi ho jata.
+// //Unlike Binary Search, array sorted hona compulsory nahi hai.
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int target;
+//     cin>>target;
+//     bool found=false;
+//     for(int i=0;i<n;i++){
+//         if(arr[i]==target){
+//             cout<<i;
+//             found=true;
+//             break;
+//         }
+//     }
+//     if(!found){
+//         cout<<-1;
+//     }
+// }
+
+// //time complexity:o(n);
+
+//binary search :
+// //Binary Search ek searching algorithm hai jo sorted array/vector mein kisi element ko 
+// //efficiently find karta hai.
+// //Time Complexity:O(log n)
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int target;
+//     cin>>target;
+//     int low=0;
+//     int high=n-1;
+//     bool found=false;
+//     while(low<=high){
+//         int mid=low+(high-low)/2;
+//         if(arr[mid]==target){
+//             cout<<arr[mid];
+//             found=true;
+//             break;
+//         }else if(arr[mid]>target){
+//             high=mid-1;
+//         }else{
+//             low=mid+1;
+//         }
+//     }
+//     if(!found){
+//         cout<<-1;
+//     }
+    
+// }
+//time complexity: o(logn)
