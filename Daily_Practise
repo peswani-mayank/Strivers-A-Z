@@ -14,7 +14,6 @@
 
 /*
 DRY RUN:
-
 Input:
 n = 12345
 while(n > 0)
