@@ -271,12 +271,8 @@
 // }
 
 
-
 //complexity: all operations in constant time o(1);
-
-
 //Queue: Queue is a linear data structure that follows FIFO — First In, First Out.
-
 
 // #include<bits/stdc++.h>
 // using namespace std;
