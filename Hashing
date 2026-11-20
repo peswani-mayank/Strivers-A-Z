@@ -43,7 +43,7 @@
 //         cin>>arr[i];
 //     }
 //     int hash[13]={0};//idr apn hash m 13 ki isliye likha idr apn ko array m jo 
-//     //bi macimum element hoga usse ek 1 jyada wala likhna h suppoe isme array m 12 maximum element h to 13 leliya
+//     //bi maximum element hoga usse ek 1 jyada wala likhna h suppoe isme array m 12 maximum element h to 13 leliya
 //     //Reason: Array ka indexing 0 se start hota hai. Isliye maximum index 12 ko 
 //     //access karne ke liye total 13 positions chahiye.
 
