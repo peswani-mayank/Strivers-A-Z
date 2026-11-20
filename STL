@@ -99,7 +99,7 @@
     
 //     //here how we can print entire vector using for loop
     
-//     for(vector<int>::iterator it4=v3.begin();it!=v3.end();it4++){
+//     for(vector<int>::iterator it4=v3.begin();it4!=v3.end();it4++){
 //         cout<<*(it4)<<" ";
 //     }
     
