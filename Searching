@@ -177,3 +177,5 @@
 //         cout<<arr[i]<<" ";
 //     }
 // }
+
+//Right rotation by k places:
