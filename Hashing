@@ -21,8 +21,7 @@
 
 //ese hi apn function bnakr kr skte h us function m 
 //int function_name(number,arr[n]) or uper wala logic likh denge 
-//usme jo bi apn ko number chahiye wo daaldenge or jis bi array m searcch krna h wo array daal denge
-//
+//usme jo bi apn ko number chahiye wo daaldenge or jis bi array m search krna h wo array daal denge
 //time complexity: isme kya ho rha h har element k liye loop o(n) chalega 
 //kyuki pure array m traverse krega suppose is example array m 5 element h to iski time complexity 5*o(n) hogi 
 //and imagine isme bhut saare numbers ho to iski time compelxity Q*o(n) idr Q no.of elements h or suppose Q bhut bada hua to
