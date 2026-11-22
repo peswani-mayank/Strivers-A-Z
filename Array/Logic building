@@ -1,89 +1,142 @@
-// //1.  Move Zeros to End
-// // Given an integer array nums, move all the 0's to the end of the array. The relative order of the other elements must remain the same.
-// // This must be done in place, without making a copy of the array.
-// // Example 1:
-// // Input: nums = [0, 1, 4, 0, 5, 2]
-// // Output: [1, 4, 5, 2, 0, 0]
-// // Explanation:
-// // Both the zeroes are moved to the end and the order of the other elements stay the same
+// // //1.  Move Zeros to End
+// // // Given an integer array nums, move all the 0's to the end of the array. The relative order of the other elements must remain the same.
+// // // This must be done in place, without making a copy of the array.
+// // // Example 1:
+// // // Input: nums = [0, 1, 4, 0, 5, 2]
+// // // Output: [1, 4, 5, 2, 0, 0]
+// // // Explanation:
+// // // Both the zeroes are moved to the end and the order of the other elements stay the same
 
-// //Brute force solution:
+// // //Brute force solution:
+// // //time: o(n);
+// // //space: o(n);
+// // //isme phele array input liya h or fr vector liya h jo non zero elements ko store krega 
+// // //fr loop chalaya ki array m or condition daali h agar ko non zero element h to usko ans wale vector m push krdo
+// // // fr uske baad wale loop m ans vector ki size s start kiya kyuki us se phele wale to elements ko non zero wale aagye
+// // //ab aage apn ko zero rkhne h to isliye isko ans ki size s lekr n tk for loop chalaya h or usme 0 value de di h 
+// // //fr uske baad ans vector ko array m copy krliya h or uske array ko print krdiya h apn agar copy nhi krege to 
+// // //usme ans vector ko print krwana pdega 
+// // // #include<bits/stdc++.h>
+// // // using namespace std;
+// // // int main(){
+// // //     int n;
+// // //     cin>>n;
+// // //     int arr[n];
+// // //     for(int i=0;i<n;i++){
+// // //         cin>>arr[i];
+// // //     }
+// // //     vector<int>ans;
+// // //     for(int i=0;i<n;i++){
+// // //         if(arr[i]!=0){
+// // //             ans.push_back(arr[i]);
+// // //         }
+// // //     }
+// // //     for(int i=ans.size();i<n;i++){
+// // //         ans.push_back(0);
+// // //     }
+// // //     for(int i=0;i<n;i++){
+// // //         arr[i]=ans[i];
+// // //     }
+// // //     for(int i=0;i<n;i++){
+// // //         cout<<ans[i]<<" ";
+// // //     }
+// // // }
+
+
+// // Sabse pehle hum j = -1 initialize karte hain. Iske baad first loop array ko traverse karta hai 
+// //aur pehla zero find karta hai. Jab i = 0 hota hai, value 1 hai, zero nahi hai, isliye 
+// //kuch nahi hota. Jab i = 1 hota hai, value 0 milti hai, toh j = 1 ho jata hai aur break 
+// //ki wajah se loop terminate ho jata hai. Ab j first zero ka index store kar raha hai.
+// // Ab second loop i = j + 1 se start hota hai, yaani i = 2 se. Yahan hum check karte 
+// //hain ki current element non-zero hai ya nahi. Jab i = 2 hota hai, arr[2] = 2 hai, 
+// //jo non-zero hai, toh arr[2] aur arr[1] ko swap kar dete hain. Array ban jata hai 
+// //[1, 2, 0, 0, 3, 0, 4] aur j++ hone ke baad j = 2 ho jata hai. Jab i = 3 hota hai, value 0 hai, 
+// //toh koi swapping nahi hoti. Jab i = 4 hota hai, value 3 hai, toh arr[4] aur arr[2] swap hote hain. 
+// //Array ban jata hai [1, 2, 3, 0, 0, 0, 4] aur j = 3 ho jata hai. Jab i = 5 hota hai, value 0 hai, 
+// //toh kuch nahi hota. Jab i = 6 hota hai, value 4 hai, toh arr[6] aur arr[3] swap hote hain. 
+// //Ab array ban jata hai [1, 2, 3, 4, 0, 0, 0] aur j = 4 ho jata hai.
+// // Finally, last loop poore array ko print karta hai.
+
+// //Optimal solution
 // //time: o(n);
-// //space: o(n);
-// //isme phele array input liya h or fr vector liya h jo non zero elements ko store krega 
-// //fr loop chalaya ki array m or condition daali h agar ko non zero element h to usko ans wale vector m push krdo
-// // fr uske baad wale loop m ans vector ki size s start kiya kyuki us se phele wale to elements ko non zero wale aagye
-// //ab aage apn ko zero rkhne h to isliye isko ans ki size s lekr n tk for loop chalaya h or usme 0 value de di h 
-// //fr uske baad ans vector ko array m copy krliya h or uske array ko print krdiya h apn agar copy nhi krege to 
-// //usme ans vector ko print krwana pdega 
-// // #include<bits/stdc++.h>
-// // using namespace std;
-// // int main(){
-// //     int n;
-// //     cin>>n;
-// //     int arr[n];
-// //     for(int i=0;i<n;i++){
-// //         cin>>arr[i];
-// //     }
-// //     vector<int>ans;
-// //     for(int i=0;i<n;i++){
-// //         if(arr[i]!=0){
-// //             ans.push_back(arr[i]);
-// //         }
-// //     }
-// //     for(int i=ans.size();i<n;i++){
-// //         ans.push_back(0);
-// //     }
-// //     for(int i=0;i<n;i++){
-// //         arr[i]=ans[i];
-// //     }
-// //     for(int i=0;i<n;i++){
-// //         cout<<ans[i]<<" ";
-// //     }
-// // }
-
-
-// Sabse pehle hum j = -1 initialize karte hain. Iske baad first loop array ko traverse karta hai 
-//aur pehla zero find karta hai. Jab i = 0 hota hai, value 1 hai, zero nahi hai, isliye 
-//kuch nahi hota. Jab i = 1 hota hai, value 0 milti hai, toh j = 1 ho jata hai aur break 
-//ki wajah se loop terminate ho jata hai. Ab j first zero ka index store kar raha hai.
-// Ab second loop i = j + 1 se start hota hai, yaani i = 2 se. Yahan hum check karte 
-//hain ki current element non-zero hai ya nahi. Jab i = 2 hota hai, arr[2] = 2 hai, 
-//jo non-zero hai, toh arr[2] aur arr[1] ko swap kar dete hain. Array ban jata hai 
-//[1, 2, 0, 0, 3, 0, 4] aur j++ hone ke baad j = 2 ho jata hai. Jab i = 3 hota hai, value 0 hai, 
-//toh koi swapping nahi hoti. Jab i = 4 hota hai, value 3 hai, toh arr[4] aur arr[2] swap hote hain. 
-//Array ban jata hai [1, 2, 3, 0, 0, 0, 4] aur j = 3 ho jata hai. Jab i = 5 hota hai, value 0 hai, 
-//toh kuch nahi hota. Jab i = 6 hota hai, value 4 hai, toh arr[6] aur arr[3] swap hote hain. 
-//Ab array ban jata hai [1, 2, 3, 4, 0, 0, 0] aur j = 4 ho jata hai.
-// Finally, last loop poore array ko print karta hai.
-
-//Optimal solution
-//time: o(n);
-//space: o(1);
-#include<bits/stdc++.h>
-using namespace std;
-int main(){
-    int n;
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
-    }
-    int j=-1;
-    for(int i=0;i<n;i++){
-        if(arr[i]==0){
-            j=i;
-            break;
-        }
-    }
-    for(int i=j+1;i<n;i++){
-        if(arr[i]!=0){
-            swap(arr[i],arr[j]);
-            j++;
-        }
-    }
+// //space: o(1);
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int j=-1;
+//     for(int i=0;i<n;i++){
+//         if(arr[i]==0){
+//             j=i;
+//             break;
+//         }
+//     }
+//     for(int i=j+1;i<n;i++){
+//         if(arr[i]!=0){
+//             swap(arr[i],arr[j]);
+//             j++;
+//         }
+//     }
     
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
-}
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+//2. Remove duplicates from sorted array
+
+//Given an integer array nums sorted in non-decreasing order, remove all duplicates in-place so that each unique element appears only once.
+// Return the number of unique elements in the array.
+// If the number of unique elements be k, then,
+// Change the array nums such that the first k elements of nums contain the unique values in the order that they were present originally.
+// The remaining elements, as well as the size of the array does not matter in terms of correctness.
+// The driver code will assess correctness by printing and checking only the first k elements of the modified array.
+// An array sorted in non-decreasing order is an array where every element to the right of an element is either equal to or greater in value than that element.
+
+
+//Brute force solution: 
+
+//time:o(nlogn);
+//space:o(n);
+// Maan lo hamare paas array hai [1, 1, 2, 2, 2, 3, 4] aur n = 7. Sabse pehle hum ek empty set<int> s 
+//banate hain. Uske baad first loop ki help se array ke saare elements ko set mein insert karte hain. 
+//Set ki speciality hoti hai ki ye duplicate elements ko automatically remove kar deta hai aur elements 
+//ko sorted order mein store karta hai. Isliye insertion ke baad set ban jayega {1, 2, 3, 4}.
+
+// Ab hum idx = 0 initialize karte hain aur range-based for loop ki help se set ko traverse 
+//karte hain. Pehli iteration mein it = 1 hoga, toh arr[0] = 1 store hoga aur idx 1 ho jayega. 
+//Second iteration mein it = 2 hoga, toh arr[1] = 2 store hoga aur idx 2 ho jayega. 
+//Third iteration mein it = 3 hoga, toh arr[2] = 3 store hoga aur idx 3 ho jayega. 
+//Finally, fourth iteration mein it = 4 hoga, toh arr[3] = 4 store hoga aur idx 4 ho jayega. 
+//Ab original array ke starting four positions mein unique elements aa chuke hain.
+
+// Ab array ka updated portion [1, 2, 3, 4] hai aur idx = 4 hai. Isliye agar hume 
+//unique elements print karne hain, toh last loop mein i < n ki jagah i < idx use karna chahiye.
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     set<int>s;
+//     for(int i=0;i<n;i++){
+//         s.insert(arr[i]);
+//     }
+//     int idx=0;
+//     for(auto it:s){
+//         arr[idx]=it;
+//         idx++;
+//     }
+//     for(int i=0;i<n;i++){ //agar idr i<n use krte h to array ki starting jo jo set k element honge wo aajyege or fr baaki bache hue index pr remaining elements aajyege
+//     //or agar apn ko bs jitne set m element h wahi array m print krwane h to i<idx likhege
+//         cout<<arr[i]<<" ";
+//     }
+// }
