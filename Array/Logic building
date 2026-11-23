@@ -277,7 +277,6 @@
 //         }
 //         right++;
 //     }
-
 // /// Agar first array mein elements bach gaye hain
 //     while(left<n1){
 //         if(unionArray.size()==0 || unionArray.back()!=a[left]){
@@ -289,3 +288,76 @@
 //         cout<<unionArray[i]<<" ";
 //     }
 // }
+
+
+// //intersection of two sorted array :
+// //brute force:
+
+// //time:o(n1*n2);
+// //space: o(n2);
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n1;
+    cin>>n1;
+    vector<int>a(n1);
+    // First array ke elements input le rahe hain
+    for(int i=0;i<n1;i++){
+        cin>>a[i];
+    }
+
+    int n2;
+    cin>>n2;
+
+    vector<int>b(n2);
+
+    // Second array ke elements input le rahe hain
+    for(int i=0;i<n2;i++){
+        cin>>b[i];
+    }
+
+    // Common elements ko store karne ke liye empty vector
+    vector<int> ans;
+
+    // Visited array banaya, initially saare elements 0 hain
+    // 0 means element abhi use nahi hua hai
+    // 1 means element already use ho chuka hai
+    vector<int> vis(n2, 0);
+
+    // First array ke har element ko traverse karenge
+    for(int i = 0; i < n1; i++){
+
+        // Second array ke elements ko check karenge
+        for(int j = 0; j < n2; j++){
+
+            // Check karenge ki dono elements equal hain
+            // Aur second array ka element already use nahi hua
+            if(a[i] == b[j] && vis[j] == 0){
+
+                // Common element ko answer vector mein insert karenge
+                ans.push_back(a[i]);
+
+                // Element ko visited mark kar denge
+                vis[j] = 1;
+
+                // Ek match mil gaya, ab inner loop se bahar aa jayenge
+                break;
+            }
+
+            // Kyunki array sorted hai, agar b[j] > a[i] hai
+            // Toh aage ke elements bhi bade honge
+            // Isliye searching stop kar sakte hain
+            if(b[j] > a[i]){
+                break;
+            }
+        }
+    }
+
+    // Finally answer vector ke saare common elements print karenge
+    for(int i = 0; i < ans.size(); i++){
+        cout << ans[i] << " ";
+    }
+
+    return 0;
+}
