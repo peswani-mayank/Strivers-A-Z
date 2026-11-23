@@ -269,12 +269,15 @@
             
 //         }
 //     }
+
+//// Agar second array mein elements bach gaye hain
 //     while(right<n2){
 //         if(unionArray.size()==0 || unionArray.back()!=b[right]){
 //                 unionArray.push_back(b[right]);
 //         }
 //         right++;
 //     }
+// /// Agar first array mein elements bach gaye hain
 //     while(left<n1){
 //         if(unionArray.size()==0 || unionArray.back()!=a[left]){
 //             unionArray.push_back(a[left]);
