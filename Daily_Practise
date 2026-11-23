@@ -2726,3 +2726,113 @@ int main(){
 //     }
 //     cout<<i+1;
 // }
+
+
+//3. Union of two sorted arrays
+// Given two sorted arrays nums1 and nums2, return an array that contains the union of these two arrays. The elements in the union must be in ascending order.
+// The union of two arrays is an array where all values are distinct and are present in either the first array, the second array, or both.
+// Example 1:
+// Input: nums1 = [1, 2, 3, 4, 5], nums2 = [1, 2, 7]
+// Output: [1, 2, 3, 4, 5, 7]
+// Explanation:
+// The elements 1, 2 are common to both, 3, 4, 5 are from nums1 and 7 is from nums2
+
+//brute force solution:
+// class Solution {
+//   public:
+//     vector<int> findUnion(vector<int> &a, vector<int> &b) {
+//         // code here
+//         int n1=a.size();
+//         int n2=b.size();
+//         set<int>s1;
+//         for(int i=0;i<n1;i++){
+//             s1.insert(a[i]); //time:n1logn
+//         }
+//         for(int i=0;i<n2;i++){
+//             s1.insert(b[i]); //time:n2logn here n is the size of set
+//         }
+//         vector<int>ans;
+        
+//         for(auto it:s1){
+//             ans.push_back(it); //time:(n1+n2)
+            
+//         }
+//         return ans;
+        
+//     }
+// };
+
+//time:o(n1logn+n2logn+(n1+n2));
+//space:o(n1+n2);
+
+//optimal solution:
+// Tumhara code Union of Two Sorted Arrays problem solve kar raha hai. Isme tumne 
+// Two Pointer Approach use ki hai, jisme left pointer first vector a ko traverse karta hai aur 
+// right pointer second vector b ko traverse karta hai. Sabse pehle tum dono arrays ka size input 
+// lete ho aur phir unke elements input karte ho. Uske baad unionArray naam ka ek empty vector banate ho, 
+// jisme dono arrays ke saare unique elements store honge. Initially left = 0 aur right = 0 rakha hai. 
+// Ab while(left < n1 && right < n2) loop tab tak chalega jab tak dono pointers apni respective arrays 
+// ki range mein hain. Is loop ke andar tum a[left] aur b[right] ko compare karte ho. Agar a[left] <= b[right] 
+// hai, toh iska matlab first array ka element chhota ya equal hai, isliye tum check karte ho ki unionArray 
+// empty hai ya uska last element a[left] ke equal nahi hai. Agar condition true hoti hai toh element ko 
+// push_back() se insert kar dete ho, otherwise duplicate hone ki wajah se skip kar dete ho. Uske baad 
+// left++ kar dete ho. Agar a[left] bada hai, toh tum second array ka element b[right] insert karne ke 
+// liye same duplicate-checking logic use karte ho aur right++ kar dete ho. Jab kisi ek array ke elements 
+// khatam ho jaate hain, toh main loop stop ho jata hai. Isliye tumne do additional while loops lagaye hain: 
+// pehla remaining elements of b ko process karta hai aur doosra remaining elements of a ko. Dono mein same 
+// duplicate-checking condition use hoti hai. Finally, last for loop ki help se tum unionArray ke saare 
+// unique elements print kar dete ho.
+
+// Tumhari approach ki complexity:
+// - Time Complexity: \(O(n1+n2)\)
+// - Space Complexity: \(O(n1+n2)\) in the worst case.
+// //time:o(n1+n2);
+// //space:o(n1+n2)
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n1;
+//     cin>>n1;
+//     vector<int>a(n1);
+//     for(int i=0;i<n1;i++){
+//         cin>>a[i];
+//     }
+//     int n2;
+//     cin>>n2;
+//     vector<int>b(n2);
+//     for(int i=0;i<n2;i++){
+//         cin>>b[i];
+//     }
+//     vector<int>unionArray;
+//     int left=0; //pointer for first vector a
+//     int right=0; //pointer for second vector b 
+//     while(left<n1 && right<n2){
+//         if(a[left]<=b[right]){
+//             if(unionArray.size()==0 || unionArray.back()!=a[left]){
+//                 unionArray.push_back(a[left]);
+//             }
+//             left++;
+//         }else{
+//             if(unionArray.size()==0 || unionArray.back()!=b[right]){
+//                 unionArray.push_back(b[right]);
+//             }
+//             right++;
+            
+//         }
+//     }
+//     while(right<n2){
+//         if(unionArray.size()==0 || unionArray.back()!=b[right]){
+//                 unionArray.push_back(b[right]);
+//         }
+//         right++;
+//     }
+//     while(left<n1){
+//         if(unionArray.size()==0 || unionArray.back()!=a[left]){
+//             unionArray.push_back(a[left]);
+//         }
+//         left++;
+//     }
+//     for(int i=0;i<unionArray.size();i++){
+//         cout<<unionArray[i]<<" ";
+//     }
+// }
