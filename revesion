@@ -557,3 +557,164 @@ int main(){
 // //Vector: Dynamic array → fast access using index.
 // ///List: Doubly linked list → efficient insertion/deletion, but no direct index access.
 
+//Array operations:
+
+//1. Array Traversal 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+    
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+
+//Array insertion in the beginning 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int value;
+//     cin>>value;
+//     for(int i=n;i>0;i--){
+//         arr[i]=arr[i-1];
+//     }
+//     arr[0]=value;
+//     n++;
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+//insertion in the end 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int value;
+//     cin>>value;
+//     arr[n]=value;
+//     n++;
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+
+//insertion at any position 
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n+1];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int value;
+//     cin>>value;
+   
+//   int pos;
+//   cin>>pos;
+//   if(pos < 0 || pos > n) {
+//         cout << "Invalid position";
+//         return 0;
+//     }
+   
+//   for(int i=n;i>pos;i--){
+//       arr[i]=arr[i-1];
+//   }
+//   arr[pos]=value;
+//   n++;
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+
+
+//Deletion from the beginning.
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+    
+//     for(int i=0;i<n;i++){
+//         arr[i]=arr[i+1];
+//     }
+//     n--;
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+    
+// }
+
+
+//Deletion from end 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     n--;
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+    
+// }
+
+//Deletion from any position 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+    
+//     int pos;
+//     cin>>pos;
+//     if(pos < 0 || pos >= n) {
+//         cout << "Invalid position";
+//         return 0;
+//     }
+    
+//     for(int i=pos;i<n;i++){
+//         arr[i]=arr[i+1];
+//     }
+//     n--;
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+    
+// }
+
