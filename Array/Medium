@@ -85,3 +85,5 @@ public:
         return ans;
     }
 };
+
+//4.Print the matrix in spiral manner
