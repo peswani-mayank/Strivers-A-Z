@@ -1369,3 +1369,36 @@ public:
 };
 
 //time:o(n*n)
+
+
+//rotate matrix by 90 degree in anti clockwise on gfg 
+class Solution {
+  public:
+    void rotateMatrix(vector<vector<int>>& mat) {
+        // code here
+        int n=mat.size();// Sabse pehle matrix ka size nikalenge
+        
+        // Step 1: Transpose the matrix
+         // Rows ko columns mein convert karenge
+        for(int i=0;i<n-1;i++){
+            for(int j=i+1;j<n;j++){
+                swap(mat[i][j],mat[j][i]);// Main diagonal ke across elements ko swap karenge
+            }
+        }
+        
+        // Step 2: Har column ko reverse karenge
+         // Isse matrix 90 degree anti-clockwise rotate ho jayegi
+        for(int j=0;j<n;j++){
+            // Har column ke liye top aur bottom pointers initialize karenge
+            int top=0;
+            int bottom=n-1;
+            // Current column ke top aur bottom elements ko swap karenge
+            while(top<=bottom){
+                swap(mat[top][j],mat[bottom][j]);
+                top++; // Top pointer ko neeche move karenge
+                bottom--;// Bottom pointer ko upar move karenge
+            }
+        }
+        
+    }
+};
