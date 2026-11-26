@@ -1585,3 +1585,15 @@ public:
 // hai. Ab hum pehle ans1 ke saare elements original array mein copy karte hain, phir ans2 ke elements 
 // aur finally ans3 ke elements copy kar dete hain. Is tarah original array ascending order mein sort ho 
 // jaata hai.
+
+
+//method 2:
+//time:o(nlogn)
+//space:o(logn)
+// class Solution {
+// public:
+//     void sortZeroOneTwo(vector<int>& nums) {
+//         sort(nums.begin(),nums.end());
+        
+//     }
+// };
