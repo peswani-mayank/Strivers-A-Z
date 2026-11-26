@@ -412,3 +412,14 @@ public:
 //         cout<<arr[i]<<" ";
 //     }
 // }
+
+// Is problem ko solve karne ke liye hum Three Temporary Vectors Approach use karte hain. 
+// Sabse pehle hum 3 separate vectors ans1, ans2 aur ans3 create karte hain, jisme respectively 
+// saare 0s, 1s aur 2s store karte hain. Uske baad hum original array ko traverse karte hain aur 
+// har element ki value check karte hain. Agar element 0 hai toh use ans1 mein, agar 1 hai toh 
+// ans2 mein aur agar 2 hai toh ans3 mein push kar dete hain. Jab saare elements separate ho jaate hain, 
+// tab hum ek idx variable initialize karte hain jo original array mein next available position track karta 
+// hai. Ab hum pehle ans1 ke saare elements original array mein copy karte hain, phir ans2 ke elements 
+// aur finally ans3 ke elements copy kar dete hain. Is tarah original array ascending order mein sort ho 
+// jaata hai.
+
