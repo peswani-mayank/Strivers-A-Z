@@ -3498,3 +3498,41 @@ public:
 //     }
 //     cout<<maxp;
 // }
+
+/optimal solution using kadane's algorithm
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin >> n; // Input the size of the array
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin >> arr[i]; // Input array elements
+//     }
+//     long long sum=0;       // Stores the sum of the current subarray
+//     long long maxi=LONG_MIN; // Stores the maximum subarray sum
+//     int start=0;       // Temporary starting index of current subarray
+//     int ansStart=-1;   // Starting index of maximum sum subarray
+//     int ansEnd=-1;     // Ending index of maximum sum subarray
+//     for(int i=0;i<n;i++){
+//         if(sum==0){
+//             start=i; // If previous sum is 0, start a new subarray
+//         }
+//         sum+=arr[i]; // Add current element to the running sum
+//         if(sum>maxi){
+//             maxi=sum;       // Update maximum sum
+//             ansStart=start; // Store starting index
+//             ansEnd=i;       // Store ending index
+//         }
+//         if(sum<0){
+//             sum=0; // Discard negative sum because it reduces future subarray sum
+//         }
+//     }
+//     cout << "Maximum Sum: " << maxi << endl;
+//     cout << "Maximum Subarray: ";
+//     for(int i=ansStart;i<=ansEnd;i++){
+//         cout << arr[i] << " "; // Print elements of maximum sum subarray
+//     }
+//     return 0;
+// }
