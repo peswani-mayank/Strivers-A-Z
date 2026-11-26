@@ -364,3 +364,51 @@ public:
 //time:o(n*n*n);
 //Auxiliary Space Complexity: O(log n) typically, due to sorting.
 // Output Space Complexity: O(m), where m is the number of unique quadruplets.
+
+//Sort an array of 0's 1's and 2's
+//method 1:
+//time:o(n)
+//space:o(n)
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+    
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+    
+//     vector<int>ans1;
+//     vector<int>ans2;
+//     vector<int>ans3;
+    
+//     for(int i=0;i<n;i++){
+//         if(arr[i]==0){
+//             ans1.push_back(arr[i]);
+//         }else if(arr[i]==1){
+//             ans2.push_back(arr[i]);
+//         }else{
+//             ans3.push_back(arr[i]);
+//         }
+//     }
+    
+//     int idx=0;
+//     for(int i=0;i<ans1.size();i++){
+//         arr[idx]=ans1[i];
+//         idx++;
+//     }
+//     for(int i=0;i<ans2.size();i++){
+//         arr[idx]=ans2[i];
+//         idx++;
+//     }
+//     for(int i=0;i<ans3.size();i++){
+//         arr[idx]=ans3[i];
+//         idx++;
+//     }
+    
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
