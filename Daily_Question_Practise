@@ -1694,3 +1694,36 @@ public:
 //     }
     
 // }
+
+//Given an integer array nums, find the subarray with the largest sum and return the sum
+// //of the elements present in that subarray.
+// //A subarray is a contiguous non-empty sequence of elements within an array.
+
+// //method 1:brute force
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int maxp=0;
+//     for(int i=0;i<n;i++){
+//         for(int j=i;j<n;j++){
+//             int sum=0;
+//             for(int k=i;k<=j;k++){
+//                 sum+=arr[k];
+//                 if(sum>maxp){
+//                     maxp=sum;
+//                 }
+//             }
+            
+//         }
+//     }
+//     cout<<maxp;
+// }
+
+// //time:o(n*n*n);
+// //space:o(1)
