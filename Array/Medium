@@ -9,6 +9,7 @@ The number 7 appears 5 times in the 9 sized array
 //Solution:
 class Solution {
 public:
+
     int majorityElement(vector<int>& nums) {
         int n=nums.size();
         map<int,int>mp;
