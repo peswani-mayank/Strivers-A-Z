@@ -28,7 +28,6 @@
 //2.MAP OPERATION
 
 //QUESTION
-
 //You are given an array arr. You need to insert the elements of arr into a 
 // map(element as key and index as value). Also, you need to erase a given element 
 // x from the map and print "erased x" if successfully erased, else print "not found".
