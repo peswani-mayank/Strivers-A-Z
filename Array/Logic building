@@ -8,6 +8,7 @@
 // // // // Both the zeroes are moved to the end and the order of the other elements stay the same
 
 
+
 // // // //Brute force solution:
 // // // //time: o(n);
 // // // //space: o(n);
