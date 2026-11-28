@@ -92,7 +92,6 @@ public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
         int n=matrix.size();// Total number of rows in the matrix
         int m=matrix[0].size(); // Total number of columns in the first row
-
         int left=0;// Starting column
         int top=0; // Starting row
         int right=m-1;// Last column
