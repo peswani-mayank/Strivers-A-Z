@@ -7,7 +7,6 @@
 //Explanation:
 //The first occurence of 3 in nums is at index 1
 
-
 //Solution:
 class Solution {
 public:
